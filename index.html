@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="html-root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">النظام العالمي الشامل لعيادات بيرل | PEARL Ultimate ERP</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Cairo -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Cairo', sans-serif; }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md sticky top-0 z-50 border-b border-blue-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <div class="w-12 h-12 bg-gradient-to-tr from-blue-700 to-indigo-600 rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg border border-blue-300">
+                        <i class="fa-solid fa-tooth"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-black text-blue-950 tracking-wide block">PEARL DENTAL</span>
+                        <span class="text-xs text-blue-600 font-bold uppercase tracking-widest" data-lang="clinic-subtitle">Ultimate Global ERP</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-6 rtl:space-x-reverse items-center">
+                    <a href="#home" class="text-slate-600 hover:text-blue-700 font-semibold transition" data-lang="nav-home">الرئيسية</a>
+                    <a href="#services" class="text-slate-600 hover:text-blue-700 font-semibold transition" data-lang="nav-services">الخدمات العلاجية</a>
+                    <a href="#doctors" class="text-slate-600 hover:text-blue-700 font-semibold transition" data-lang="nav-doctors">الكادر الطبي</a>
+                    <a href="#booking" class="text-slate-600 hover:text-blue-700 font-semibold transition" data-lang="nav-booking">حجز المواعيد</a>
+                    
+                    <button onclick="toggleLanguage()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-3.5 py-2 rounded-xl text-sm font-bold transition flex items-center gap-1.5 shadow-sm">
+                        <i class="fa-solid fa-globe text-blue-600"></i> <span id="lang-btn-text">English</span>
+                    </button>
+
+                    <button onclick="openAdminModal()" class="bg-gradient-to-r from-blue-800 to-indigo-900 hover:from-blue-900 hover:to-indigo-950 text-white px-5 py-2.5 rounded-xl font-bold shadow-md transition flex items-center gap-2">
+                        <i class="fa-solid fa-shield-halved"></i> <span data-lang="nav-admin">بوابة الإدارة الشاملة</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-gradient-to-tr from-slate-950 via-blue-950 to-blue-800 text-white py-28 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="bg-blue-800/60 text-blue-200 text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wider inline-block mb-4 border border-blue-500/30 backdrop-blur-md" data-lang="hero-tag">نظام الإدارة الصحية العالمي المتكامل</span>
+                    <h1 class="text-4xl md:text-5xl font-black leading-tight mb-6" data-lang="hero-title">التميز في رعاية الأسنان بأحدث التقنيات الدولية</h1>
+                    <p class="text-slate-300 text-lg mb-8 leading-relaxed" data-lang="hero-desc">منظومة رقمية شاملة لإدارة العيادات، الملفات الطبية، التأمين الطبي، الحسابات، وشؤون الموظفين بدقة متناهية.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#booking" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition flex items-center gap-2" data-lang="hero-btn1"><i class="fa-solid fa-calendar-plus"></i> احجز موعدك الآن</a>
+                        <a href="#services" class="border border-slate-600 hover:bg-slate-800/50 text-white font-semibold px-8 py-4 rounded-xl transition" data-lang="hero-btn2">استكشف خدماتنا</a>
+                    </div>
+                </div>
+                <div class="hidden md:flex justify-center">
+                    <div class="w-80 h-80 bg-blue-900/20 rounded-3xl flex items-center justify-center p-8 shadow-2xl border border-blue-500/20 backdrop-blur-xl relative">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-blue-600/10 to-transparent rounded-3xl"></div>
+                        <i class="fa-solid fa-hospital text-9xl text-blue-300/90 drop-shadow-2xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl font-black text-slate-900 mb-4" data-lang="services-section-title">خدماتنا الطبية المتميزة</h2>
+                <p class="text-slate-600" data-lang="services-section-subtitle">نقدم أحدث حلول طب وتجميل الأسنان بأعلى معايير الأمان والتعقيم العالمي</p>
+            </div>
+            <div id="services-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+        </div>
+    </section>
+
+    <!-- Doctors Section -->
+    <section id="doctors" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl font-black text-slate-900 mb-4" data-lang="doctors-section-title">نخبة الأطباء والاستشاريين</h2>
+                <p class="text-slate-600" data-lang="doctors-section-subtitle">فريق طبي محترف ذو اعتمادات دولية لضمان أعلى نسب النجاح والرعاية</p>
+            </div>
+            <div id="doctors-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section id="booking" class="py-24 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-slate-50 p-8 md:p-12 rounded-3xl shadow-sm border border-slate-200">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-black text-slate-900 mb-2" data-lang="booking-title">حجز موعد جديد</h2>
+                    <p class="text-slate-600" data-lang="booking-subtitle">قم بتعبئة بياناتك وسنقوم بالتنسيق والتأكيد الفوري لموعدك</p>
+                </div>
+                <form id="booking-form" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-slate-700 font-bold mb-2 text-sm" data-lang="form-name">اسم المريض الكامل</label>
+                            <input type="text" id="patient-name" class="w-full border border-slate-300 p-4 rounded-xl bg-white focus:ring-2 focus:ring-blue-600 focus:outline-none" required>
+                        </div>
+                        <div>
+                            <label class="block text-slate-700 font-bold mb-2 text-sm" data-lang="form-phone">رقم الهاتف المحمول</label>
+                            <input type="tel" id="patient-phone" class="w-full border border-slate-300 p-4 rounded-xl bg-white focus:ring-2 focus:ring-blue-600 focus:outline-none" placeholder="+971 50 000 0000" required>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-slate-700 font-bold mb-2 text-sm" data-lang="form-service">الخدمة العلاجية المطلوبة</label>
+                            <select id="service-type" class="w-full border border-slate-300 p-4 rounded-xl bg-white focus:ring-2 focus:ring-blue-600 focus:outline-none"></select>
+                        </div>
+                        <div>
+                            <label class="block text-slate-700 font-bold mb-2 text-sm" data-lang="form-date">تاريخ الموعد المفضل</label>
+                            <input type="date" id="booking-date" class="w-full border border-slate-300 p-4 rounded-xl bg-white focus:ring-2 focus:ring-blue-600 focus:outline-none" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-700 hover:bg-blue-800 text-white font-bold py-4 rounded-xl shadow-lg transition duration-200 text-lg flex items-center justify-center gap-2" data-lang="form-submit"><i class="fa-solid fa-circle-check"></i> تأكيد حجز الموعد</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Login Modal -->
+    <div id="admin-modal" class="fixed inset-0 bg-slate-950/70 backdrop-blur-md hidden items-center justify-center z-50 p-4">
+        <div class="bg-white w-full max-w-md p-8 rounded-3xl shadow-2xl relative border border-slate-100">
+            <button onclick="closeAdminModal()" class="absolute top-4 start-4 text-slate-400 hover:text-slate-600 text-xl"><i class="fa-solid fa-xmark"></i></button>
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-blue-50 text-blue-700 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-3 shadow-inner border border-blue-100">
+                    <i class="fa-solid fa-user-lock"></i>
+                </div>
+                <h3 class="text-2xl font-black text-slate-900" data-lang="login-title">تسجيل دخول نظام الإدارة</h3>
+                <p class="text-slate-500 text-sm mt-1" data-lang="login-subtitle">أدخل بيانات الاعتماد (مثال: it أو haneen)</p>
+            </div>
+            <form onsubmit="handleAdminLogin(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-600 mb-1" data-lang="login-user-lbl">اسم المستخدم</label>
+                    <input type="text" id="login-username" class="w-full border border-slate-300 p-3.5 rounded-xl focus:ring-2 focus:ring-blue-600 focus:outline-none" placeholder="it أو haneen" required>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-600 mb-1" data-lang="login-pass-lbl">كلمة المرور</label>
+                    <input type="password" id="admin-password" class="w-full border border-slate-300 p-3.5 rounded-xl focus:ring-2 focus:ring-blue-600 focus:outline-none" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="w-full bg-blue-900 hover:bg-blue-950 text-white font-bold py-3.5 rounded-xl shadow-md transition" data-lang="login-btn">دخول آمن للنظام</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard Modal (Ultimate Global ERP System) -->
+    <div id="dashboard-modal" class="fixed inset-0 bg-slate-950/90 backdrop-blur-lg hidden z-50 overflow-y-auto p-4 md:p-6">
+        <div class="bg-white max-w-7xl mx-auto rounded-3xl shadow-2xl overflow-hidden min-h-[92vh] flex flex-col border border-slate-700">
+            <!-- Header -->
+            <div class="bg-slate-900 text-white p-6 flex justify-between items-center border-b border-slate-800">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center font-black text-lg shadow" id="current-user-avatar">IT</div>
+                    <div>
+                        <h2 class="text-xl font-black tracking-wide" id="dashboard-title" data-lang="dash-main-title">النظام العالمي الشامل للعيادات (Ultimate ERP)</h2>
+                        <p class="text-xs text-blue-400 font-semibold" id="user-role-badge">صلاحيات كاملة مطلقة</p>
+                    </div>
+                </div>
+                <button onclick="closeDashboard()" class="bg-slate-800 hover:bg-red-600 text-slate-200 hover:text-white px-5 py-2.5 rounded-xl text-sm font-bold transition flex items-center gap-2"><i class="fa-solid fa-power-off"></i> <span data-lang="dash-exit">خروج من النظام</span></button>
+            </div>
+            
+            <!-- Body Content -->
+            <div class="p-6 md:p-8 flex-1 bg-slate-50 space-y-8">
+                <!-- أزرار التنقل بين الأقسام العالمية الشاملة -->
+                <div id="tab-buttons-container" class="flex flex-wrap gap-3 border-b border-slate-200 pb-4"></div>
+
+                <!-- 1. الحجوزات والمواعيد -->
+                <div id="tab-appointments" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex items-center justify-between">
+                            <div>
+                                <p class="text-slate-500 text-xs font-bold uppercase" data-lang="stat-total-app">إجمالي المواعيد النشطة</p>
+                                <h3 id="dash-total" class="text-3xl font-black text-blue-950 mt-1">0</h3>
+                            </div>
+                            <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-2xl shadow-sm"><i class="fa-solid fa-calendar-check"></i></div>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex items-center justify-between">
+                            <div>
+                                <p class="text-slate-500 text-xs font-bold uppercase" data-lang="stat-status">حالة الأمان والاتصال</p>
+                                <h3 class="text-lg font-bold text-emerald-600 mt-1 flex items-center gap-2"><i class="fa-solid fa-circle text-xs"></i> <span data-lang="stat-connected">متصل بنظام الأمان العالمي</span></h3>
+                            </div>
+                            <div class="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl shadow-sm"><i class="fa-solid fa-shield-halved"></i></div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                        <div class="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
+                            <h3 class="font-black text-slate-900 text-lg" data-lang="table-app-title">قائمة المواعيد وحجوزات المرضى</h3>
+                            <button onclick="clearBookings()" class="text-red-600 hover:text-red-700 bg-red-50 hover:bg-red-100 px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5"><i class="fa-solid fa-trash-can"></i> <span data-lang="btn-clear-app">مسح سجل المواعيد</span></button>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-start rtl:text-right border-collapse">
+                                <thead>
+                                    <tr class="bg-slate-100/80 text-slate-600 text-xs font-black uppercase border-b border-slate-200">
+                                        <th class="p-4" data-lang="th-patient">اسم المريض</th>
+                                        <th class="p-4" data-lang="th-phone">رقم الهاتف</th>
+                                        <th class="p-4" data-lang="th-service">الخدمة المطلوبة</th>
+                                        <th class="p-4" data-lang="th-date">تاريخ الموعد</th>
+                                        <th class="p-4" data-lang="th-action">الإجراءات</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="bookings-table-body" class="text-sm divide-y divide-slate-100"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. السجلات الطبية والملفات الإكلينيكية (EHR) -->
+                <div id="tab-medical" class="hidden space-y-6">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                        <h3 class="text-lg font-black text-slate-900 mb-4 flex items-center gap-2"><i class="fa-solid fa-notes-medical text-blue-600"></i> <span data-lang="med-add-title">تسجيل ملف طبي جديد (تشخيص ووصفة)</span></h3>
+                        <form onsubmit="handleAddRecord(event)" class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                            <input type="text" id="rec-patient" placeholder="اسم المريض" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required data-lang-ph="ph-patient">
+                            <input type="text" id="rec-diagnosis" placeholder="التشخيص الطبي الإكلينيكي" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required data-lang-ph="ph-diag">
+                            <input type="text" id="rec-prescription" placeholder="الوصفة الطبية (الأدوية والجرعات)" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required data-lang-ph="ph-presc">
+                            <button type="submit" class="bg-blue-800 hover:bg-blue-900 text-white font-bold py-3.5 rounded-xl text-sm transition shadow" data-lang="btn-save-med">حفظ الملف الطبي</button>
+                        </form>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                        <h3 class="text-lg font-black text-slate-900 mb-4" data-lang="med-list-title">أرشيف الملفات والسجلات الطبية السابقة</h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-start rtl:text-right border-collapse">
+                                <thead>
+                                    <tr class="bg-slate-100 text-slate-600 text-xs font-black uppercase border-b border-slate-200">
+                                        <th class="p-4" data-lang="th-patient">اسم المريض</th>
+                                        <th class="p-4" data-lang="th-diag">التشخيص الطبي</th>
+                                        <th class="p-4" data-lang="th-presc">الأدوية والوصفة</th>
+                                        <th class="p-4" data-lang="th-action">الإجراء</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="records-table-body" class="text-sm divide-y divide-slate-100"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. الصيدلية والمخزون الطبي والدوائي -->
+                <div id="tab-pharmacy" class="hidden space-y-6">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                        <h3 class="text-lg font-black text-slate-900 mb-4 flex items-center gap-2"><i class="fa-solid fa-pills text-blue-600"></i> <span data-lang="inv-add-title">إضافة صنف طبي أو دوائي للمخزون</span></h3>
+                        <form onsubmit="handleAddInventory(event)" class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                            <input type="text" id="inv-item" placeholder="اسم الصنف (مثلاً: بنج أسنان)" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required data-lang-ph="ph-item">
+                            <input type="number" id="inv-qty" placeholder="الكمية المتاحة" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required data-lang-ph="ph-qty">
+                            <input type="date" id="inv-exp" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required>
+                            <button type="submit" class="bg-blue-800 hover:bg-blue-900 text-white font-bold py-3.5 rounded-xl text-sm transition shadow" data-lang="btn-save-inv">إضافة للمخزون</button>
+                        </form>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                        <h3 class="text-lg font-black text-slate-900 mb-4" data-lang="inv-list-title">قائمة المخزون والأدوية الحالية</h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-start rtl:text-right border-collapse">
+                                <thead>
+                                    <tr class="bg-slate-100 text-slate-600 text-xs font-black uppercase border-b border-slate-200">
+                                        <th class="p-4" data-lang="th-item">اسم الصنف</th>
+                                        <th class="p-4" data-lang="th-qty">الكمية</th>
+                                        <th class="p-4" data-lang="th-exp">تاريخ انتهاء الصلاحية</th>
+                                        <th class="p-4" data-lang="th-action">الإجراء</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="inventory-table-body" class="text-sm divide-y divide-slate-100"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. الحسابات وتحليل الأرباح والخزينة -->
+                <div id="tab-finance" class="hidden space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                            <p class="text-slate-500 text-xs font-bold uppercase" data-lang="fin-inc-lbl">إجمالي الإيرادات</p>
+                            <h3 id="fin-income" class="text-3xl font-black text-emerald-600 mt-1">0</h3>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                            <p class="text-slate-500 text-xs font-bold uppercase" data-lang="fin-exp-lbl">إجمالي المصروفات والرواتب</p>
+                            <h3 id="fin-expenses" class="text-3xl font-black text-red-600 mt-1">0</h3>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                            <p class="text-slate-500 text-xs font-bold uppercase" data-lang="fin-net-lbl">صافي الأرباح الصافية</p>
+                            <h3 id="fin-net" class="text-3xl font-black text-blue-950 mt-1">0</h3>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                        <h3 class="text-lg font-black text-slate-900 mb-4 flex items-center gap-2"><i class="fa-solid fa-file-invoice-dollar text-blue-600"></i> <span data-lang="fin-add-title">تسجيل معاملة مالية جديدة (إيراد أو مصروف)</span></h3>
+                        <form onsubmit="handleAddTransaction(event)" class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                            <input type="text" id="tr-desc" placeholder="بيان المعاملة" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required data-lang-ph="ph-trans-desc">
+                            <input type="number" id="tr-amount" placeholder="المبلغ" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required data-lang-ph="ph-amount">
+                            <select id="tr-type" class="border border-slate-300 p-3.5 rounded-xl text-sm bg-white focus:ring-2 focus:ring-blue-600 focus:outline-none">
+                                <option value="income" data-lang="opt-inc">إيراد (دخل العيادة)</option>
+                                <option value="expense" data-lang="opt-exp">مصروف (نثريات/مشتريات)</option>
+                            </select>
+                            <button type="submit" class="bg-blue-800 hover:bg-blue-900 text-white font-bold py-3.5 rounded-xl text-sm transition shadow" data-lang="btn-save-trans">حفظ المعاملة المالية</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- 5. إدارة الرواتب والمستحقات المتقدمة -->
+                <div id="tab-hr" class="hidden space-y-6">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                        <h3 class="text-lg font-black text-slate-900 mb-4 flex items-center gap-2"><i class="fa-solid fa-hand-holding-dollar text-blue-600"></i> <span data-lang="hr-add-title">نظام الرواتب، المكافآت، والخصومات (المستحقات النهائية)</span></h3>
+                        <form onsubmit="handleAddEmployee(event)" class="grid grid-cols-1 md:grid-cols-6 gap-4">
+                            <input type="text" id="emp-name" placeholder="اسم الموظف أو الطبيب" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required data-lang-ph="ph-emp-name">
+                            <input type="text" id="emp-role" placeholder="المسمى الوظيفي" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required data-lang-ph="ph-emp-role">
+                            <input type="number" id="emp-salary" placeholder="الراتب الأساسي" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required data-lang-ph="ph-emp-sal">
+                            <input type="number" id="emp-bonus" placeholder="المكافآت / البدلات" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" value="0" data-lang-ph="ph-emp-bonus">
+                            <input type="number" id="emp-deduct" placeholder="الخصومات / السلف" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" value="0" data-lang-ph="ph-emp-ded">
+                            <button type="submit" class="bg-blue-800 hover:bg-blue-900 text-white font-bold py-3.5 rounded-xl text-sm transition shadow md:col-span-6" data-lang="btn-save-hr">حساب وحفظ المستحقات النهائية للموظف</button>
+                        </form>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-lg font-black text-slate-900" data-lang="hr-list-title">سجل رواتب الطاقم والمستحقات المعتمدة</h3>
+                            <span class="bg-blue-50 text-blue-900 px-4 py-2 rounded-xl font-black text-sm border border-blue-100 shadow-sm" id="total-payroll-box">إجمالي الصرف: 0</span>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-start rtl:text-right border-collapse">
+                                <thead>
+                                    <tr class="bg-slate-100 text-slate-600 text-xs font-black uppercase border-b border-slate-200">
+                                        <th class="p-4" data-lang="th-emp">الموظف</th>
+                                        <th class="p-4" data-lang="th-role">الوظيفة</th>
+                                        <th class="p-4" data-lang="th-base">الأساسي</th>
+                                        <th class="p-4" data-lang="th-bonus">المكافآت</th>
+                                        <th class="p-4" data-lang="th-deduct">الخصومات</th>
+                                        <th class="p-4" data-lang="th-net">صافي المستحق</th>
+                                        <th class="p-4" data-lang="th-action">الإجراء</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="payroll-table-body" class="text-sm divide-y divide-slate-100"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. التأمين الطبي وشركات التأمين -->
+                <div id="tab-insurance" class="hidden space-y-6">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                        <h3 class="text-lg font-black text-slate-900 mb-4 flex items-center gap-2"><i class="fa-solid fa-shield-heart text-blue-600"></i> <span data-lang="ins-add-title">تسجيل بوليصة تأمين طبي لمرضى العيادة</span></h3>
+                        <form onsubmit="handleAddInsurance(event)" class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                            <input type="text" id="ins-patient" placeholder="اسم المريض" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required data-lang-ph="ph-patient">
+                            <input type="text" id="ins-company" placeholder="اسم شركة التأمين" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required data-lang-ph="ph-ins-comp">
+                            <input type="text" id="ins-policy" placeholder="رقم البوليصة / الكارت" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required data-lang-ph="ph-ins-pol">
+                            <button type="submit" class="bg-blue-800 hover:bg-blue-900 text-white font-bold py-3.5 rounded-xl text-sm transition shadow" data-lang="btn-save-ins">حفظ ملف التأمين</button>
+                        </form>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                        <h3 class="text-lg font-black text-slate-900 mb-4" data-lang="ins-list-title">سجل بوليصات التأمين الطبي النشطة</h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-start rtl:text-right border-collapse">
+                                <thead>
+                                    <tr class="bg-slate-100 text-slate-600 text-xs font-black uppercase border-b border-slate-200">
+                                        <th class="p-4" data-lang="th-patient">اسم المريض</th>
+                                        <th class="p-4" data-lang="th-ins-comp">شركة التأمين</th>
+                                        <th class="p-4" data-lang="th-ins-pol">رقم البوليصة</th>
+                                        <th class="p-4" data-lang="th-action">الإجراء</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="insurance-table-body" class="text-sm divide-y divide-slate-100"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. مناوبات ومناقشات الأطباء -->
+                <div id="tab-shifts" class="hidden space-y-6">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                        <h3 class="text-lg font-black text-slate-900 mb-4 flex items-center gap-2"><i class="fa-solid fa-clock text-blue-600"></i> <span data-lang="shift-add-title">تحديد مناوبات وجدول أوقات الأطباء</span></h3>
+                        <form onsubmit="handleAddShift(event)" class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                            <input type="text" id="shift-doctor" placeholder="اسم الطبيب" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required data-lang-ph="ph-doc-name">
+                            <input type="text" id="shift-days" placeholder="أيام العمل" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required data-lang-ph="ph-shift-days">
+                            <input type="text" id="shift-time" placeholder="الفترة الزمنية" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required data-lang-ph="ph-shift-time">
+                            <button type="submit" class="bg-blue-800 hover:bg-blue-900 text-white font-bold py-3.5 rounded-xl text-sm transition shadow" data-lang="btn-save-shift">حفظ المناوبة</button>
+                        </form>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                        <h3 class="text-lg font-black text-slate-900 mb-4" data-lang="shift-list-title">جدول ومناوبات الأطباء الحالية</h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-start rtl:text-right border-collapse">
+                                <thead>
+                                    <tr class="bg-slate-100 text-slate-600 text-xs font-black uppercase border-b border-slate-200">
+                                        <th class="p-4" data-lang="th-doc">اسم الطبيب</th>
+                                        <th class="p-4" data-lang="th-days">أيام العمل</th>
+                                        <th class="p-4" data-lang="th-time">الفترة الزمنية</th>
+                                        <th class="p-4" data-lang="th-action">الإجراء</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="shifts-table-body" class="text-sm divide-y divide-slate-100"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. الخدمات العلاجية -->
+                <div id="tab-services" class="hidden space-y-6">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                        <h3 class="text-lg font-black text-slate-900 mb-4" data-lang="serv-add-title">➕ إضافة خدمة علاجية جديدة</h3>
+                        <form onsubmit="handleAddService(event)" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <input type="text" id="new-service-title" placeholder="اسم الخدمة" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required data-lang-ph="ph-serv-title">
+                            <input type="text" id="new-service-desc" placeholder="الوصف والتقنية المستخدمة" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required data-lang-ph="ph-serv-desc">
+                            <button type="submit" class="bg-blue-800 hover:bg-blue-900 text-white font-bold py-3.5 rounded-xl text-sm transition shadow" data-lang="btn-save-serv">حفظ الخدمة</button>
+                        </form>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                        <h3 class="text-lg font-black text-slate-900 mb-4" data-lang="serv-list-title">الخدمات العلاجية النشطة</h3>
+                        <div id="admin-services-list" class="space-y-3"></div>
+                    </div>
+                </div>
+
+                <!-- 9. الأطباء -->
+                <div id="tab-doctors" class="hidden space-y-6">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                        <h3 class="text-lg font-black text-slate-900 mb-4" data-lang="doc-add-title">👨‍⚕️ تسجيل طبيب استشاري جديد</h3>
+                        <form onsubmit="handleAddDoctor(event)" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <input type="text" id="new-doc-name" placeholder="اسم الطبيب" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required data-lang-ph="ph-doc-name">
+                            <input type="text" id="new-doc-spec" placeholder="التخصص الدقيق" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required data-lang-ph="ph-doc-spec">
+                            <button type="submit" class="bg-blue-800 hover:bg-blue-900 text-white font-bold py-3.5 rounded-xl text-sm transition shadow" data-lang="btn-save-doc">إضافة الطبيب</button>
+                        </form>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                        <h3 class="text-lg font-black text-slate-900 mb-4" data-lang="doc-list-title">قائمة الكادر الطبي</h3>
+                        <div id="admin-doctors-list" class="space-y-3"></div>
+                    </div>
+                </div>
+
+                <!-- 10. إدارة المستخدمين والصلاحيات -->
+                <div id="tab-users" class="hidden space-y-6">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                        <h3 class="text-lg font-black text-slate-900 mb-4" data-lang="usr-add-title">👤 إضافة مستخدم جديد للنظام وصلاحياته</h3>
+                        <form onsubmit="handleAddUser(event)" class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                            <input type="text" id="new-user-name" placeholder="اسم المستخدم" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required data-lang-ph="ph-usr-name">
+                            <input type="password" id="new-user-pass" placeholder="كلمة المرور" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required data-lang-ph="ph-usr-pass">
+                            <select id="new-user-role" class="border border-slate-300 p-3.5 rounded-xl text-sm bg-white focus:ring-2 focus:ring-blue-600 focus:outline-none">
+                                <option value="admin" data-lang="opt-admin">مدير / تقنية معلومات (كامل الصلاحيات)</option>
+                                <option value="doctor" data-lang="opt-doctor">طبيب معالج</option>
+                            </select>
+                            <button type="submit" class="bg-blue-800 hover:bg-blue-900 text-white font-bold py-3.5 rounded-xl text-sm transition shadow" data-lang="btn-save-usr">حفظ المستخدم</button>
+                        </form>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                        <h3 class="text-lg font-black text-slate-900 mb-4" data-lang="usr-list-title">المستخدمون المصرح لهم بالدخول</h3>
+                        <div id="users-list" class="space-y-3"></div>
+                    </div>
+                </div>
+
+                <!-- 11. إعدادات الحساب وكلمة المرور -->
+                <div id="tab-settings" class="hidden space-y-6">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 max-w-md">
+                        <h3 class="text-lg font-black text-slate-900 mb-4" data-lang="set-title">🔑 تغيير كلمة المرور للحساب الحالي</h3>
+                        <form onsubmit="handleChangePassword(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-600 mb-1" data-lang="set-new-pass">كلمة المرور الجديدة</label>
+                                <input type="password" id="change-pass-input" class="w-full border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required placeholder="••••••••">
+                            </div>
+                            <button type="submit" class="w-full bg-blue-800 hover:bg-blue-900 text-white font-bold py-3.5 rounded-xl text-sm transition shadow" data-lang="btn-update-pass">تحديث كلمة المرور</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript النظام ثنائي اللغة بالكامل -->
+    <script>
+        const translations = {
+            ar: {
+                "page-title": "النظام العالمي الشامل لعيادات بيرل | PEARL Ultimate ERP",
+                "clinic-subtitle": "Ultimate Global ERP",
+                "nav-home": "الرئيسية",
+                "nav-services": "الخدمات العلاجية",
+                "nav-doctors": "الكادر الطبي",
+                "nav-booking": "حجز المواعيد",
+                "nav-admin": "بوابة الإدارة الشاملة",
+                "hero-tag": "نظام الإدارة الصحية العالمي المتكامل",
+                "hero-title": "التميز في رعاية الأسنان بأحدث التقنيات الدولية",
+                "hero-desc": "منظومة رقمية شاملة لإدارة العيادات، الملفات الطبية، التأمين الطبي، الحسابات، وشؤون الموظفين بدقة متناهية.",
+                "hero-btn1": "احجز موعدك الآن",
+                "hero-btn2": "استكشف خدماتنا",
+                "services-section-title": "خدماتنا الطبية المتميزة",
+                "services-section-subtitle": "نقدم أحدث حلول طب وتجميل الأسنان بأعلى معايير الأمان والتعقيم العالمي",
+                "doctors-section-title": "نخبة الأطباء والاستشاريين",
+                "doctors-section-subtitle": "فريق طبي محترف ذو اعتمادات دولية لضمان أعلى نسب النجاح والرعاية",
+                "booking-title": "حجز موعد جديد",
+                "booking-subtitle": "قم بتعبئة بياناتك وسنقوم بالتنسيق والتأكيد الفوري لموعدك",
+                "form-name": "اسم المريض الكامل",
+                "form-phone": "رقم الهاتف المحمول",
+                "form-service": "الخدمة العلاجية المطلوبة",
+                "form-date": "تاريخ الموعد المفضل",
+                "form-submit": "تأكيد حجز الموعد",
+                "login-title": "تسجيل دخول نظام الإدارة",
+                "login-subtitle": "أدخل بيانات الاعتماد (مثال: it أو haneen)",
+                "login-user-lbl": "اسم المستخدم",
+                "login-pass-lbl": "كلمة المرور",
+                "login-btn": "دخول آمن للنظام",
+                "dash-main-title": "النظام العالمي الشامل للعيادات (Ultimate ERP)",
+                "dash-exit": "خروج من النظام",
+                "stat-total-app": "إجمالي المواعيد النشطة",
+                "stat-status": "حالة الأمان والاتصال",
+                "stat-connected": "متصل بنظام الأمان العالمي",
+                "table-app-title": "قائمة المواعيد وحجوزات المرضى",
+                "btn-clear-app": "مسح سجل المواعيد",
+                "th-patient": "اسم المريض",
+                "th-phone": "رقم الهاتف",
+                "th-service": "الخدمة المطلوبة",
+                "th-date": "تاريخ الموعد",
+                "th-action": "الإجراءات",
+                "th-diag": "التشخيص الطبي",
+                "th-presc": "الأدوية والوصفة",
+                "th-item": "اسم الصنف",
+                "th-qty": "الكمية",
+                "th-exp": "تاريخ انتهاء الصلاحية",
+                "th-emp": "الموظف",
+                "th-role": "الوظيفة",
+                "th-base": "الأساسي",
+                "th-bonus": "المكافآت",
+                "th-deduct": "الخصومات",
+                "th-net": "صافي المستحق",
+                "th-ins-comp": "شركة التأمين",
+                "th-ins-pol": "رقم البوليصة",
+                "th-doc": "اسم الطبيب",
+                "th-days": "أيام العمل",
+                "th-time": "الفترة الزمنية",
+                "med-add-title": "تسجيل ملف طبي جديد (تشخيص ووصفة)",
+                "btn-save-med": "حفظ الملف الطبي",
+                "med-list-title": "أرشيف الملفات والسجلات الطبية السابقة",
+                "inv-add-title": "إضافة صنف طبي أو دوائي للمخزون",
+                "btn-save-inv": "إضافة للمخزون",
+                "inv-list-title": "قائمة المخزون والأدوية الحالية",
+                "fin-inc-lbl": "إجمالي الإيرادات",
+                "fin-exp-lbl": "إجمالي المصروفات والرواتب",
+                "fin-net-lbl": "صافي الأرباح الصافية",
+                "fin-add-title": "تسجيل معاملة مالية جديدة (إيراد أو مصروف)",
+                "opt-inc": "إيراد (دخل العيادة)",
+                "opt-exp": "مصروف (نثريات/مشتريات)",
+                "btn-save-trans": "حفظ المعاملة المالية",
+                "hr-add-title": "نظام الرواتب، المكافآت، والخصومات (المستحقات النهائية)",
+                "btn-save-hr": "حساب وحفظ المستحقات النهائية للموظف",
+                "hr-list-title": "سجل رواتب الطاقم والمستحقات المعتمدة",
+                "ins-add-title": "تسجيل بوليصة تأمين طبي لمرضى العيادة",
+                "btn-save-ins": "حفظ ملف التأمين",
+                "ins-list-title": "سجل بوليصات التأمين الطبي النشطة",
+                "shift-add-title": "تحديد مناوبات وجدول أوقات الأطباء",
+                "btn-save-shift": "حفظ المناوبة",
+                "shift-list-title": "جدول ومناوبات الأطباء الحالية",
+                "serv-add-title": "➕ إضافة خدمة علاجية جديدة",
+                "btn-save-serv": "حفظ الخدمة",
+                "serv-list-title": "الخدمات العلاجية النشطة",
+                "doc-add-title": "👨‍⚕️ تسجيل طبيب استشاري جديد",
+                "btn-save-doc": "إضافة الطبيب",
+                "doc-list-title": "قائمة الكادر الطبي",
+                "usr-add-title": "👤 إضافة مستخدم جديد للنظام وصلاحياته",
+                "opt-admin": "مدير / تقنية معلومات (كامل الصلاحيات)",
+                "opt-doctor": "طبيب معالج",
+                "btn-save-usr": "حفظ المستخدم",
+                "usr-list-title": "المستخدمون المصرح لهم بالدخول",
+                "set-title": "🔑 تغيير كلمة المرور للحساب الحالي",
+                "set-new-pass": "كلمة المرور الجديدة",
+                "btn-update-pass": "تحديث كلمة المرور",
+                
+                // الأقسام والروابط داخل الداشبورد
+                "tab-appointments": "إدارة الحجوزات والمواعيد",
+                "tab-medical": "السجلات الطبية (EHR)",
+                "tab-pharmacy": "الصيدلية والمخزون",
+                "tab-insurance": "التأمين الطبي (Insurance)",
+                "tab-shifts": "مناوبات وجداول الأطباء",
+                "tab-finance": "الحسابات وتحليل الأرباح",
+                "tab-hr": "الرواتب والمستحقات النهائية",
+                "tab-services": "الخدمات العلاجية",
+                "tab-doctors": "الكادر الطبي والاستشاريين",
+                "tab-users": "إدارة المستخدمين والصلاحيات",
+                "tab-settings": "أمان الحساب",
+
+                // Placeholders
+                "ph-patient": "اسم المريض",
+                "ph-diag": "التشخيص الطبي الإكلينيكي",
+                "ph-presc": "الوصفة الطبية (الأدوية والجرعات)",
+                "ph-item": "اسم الصنف (مثلاً: بنج أسنان)",
+                "ph-qty": "الكمية المتاحة",
+                "ph-trans-desc": "بيان المعاملة",
+                "ph-amount": "المبلغ",
+                "ph-emp-name": "اسم الموظف أو الطبيب",
+                "ph-emp-role": "المسمى الوظيفي",
+                "ph-emp-sal": "الراتب الأساسي",
+                "ph-emp-bonus": "المكافآت / البدلات",
+                "ph-emp-ded": "الخصومات / السلف",
+                "ph-ins-comp": "اسم شركة التأمين",
+                "ph-ins-pol": "رقم البوليصة / الكارت",
+                "ph-doc-name": "اسم الطبيب",
+                "ph-shift-days": "أيام العمل (مثلاً: الأحد - الخميس)",
+                "ph-shift-time": "الفترة الزمنية",
+                "ph-serv-title": "اسم الخدمة",
+                "ph-serv-desc": "الوصف والتقنية المستخدمة",
+                "ph-doc-spec": "التخصص الدقيق",
+                "ph-usr-name": "اسم المستخدم",
+                "ph-usr-pass": "كلمة المرور"
+            },
+            en: {
+                "page-title": "PEARL Ultimate Global ERP",
+                "clinic-subtitle": "Ultimate Global ERP",
+                "nav-home": "Home",
+                "nav-services": "Services",
+                "nav-doctors": "Doctors",
+                "nav-booking": "Book Appointment",
+                "nav-admin": "Admin Portal",
+                "hero-tag": "Ultimate Healthcare Enterprise ERP",
+                "hero-title": "Excellence in Dental Care with International Standards",
+                "hero-desc": "A comprehensive digital system for clinic management, medical records, insurance, accounting, and HR.",
+                "hero-btn1": "Book Appointment",
+                "hero-btn2": "Explore Services",
+                "services-section-title": "Our Featured Medical Services",
+                "services-section-subtitle": "Cutting-edge dental solutions with highest global safety standards",
+                "doctors-section-title": "Elite Specialists & Doctors",
+                "doctors-section-subtitle": "Professional medical team with international credentials",
+                "booking-title": "Book a New Appointment",
+                "booking-subtitle": "Fill in your details for immediate coordination",
+                "form-name": "Full Patient Name",
+                "form-phone": "Mobile Number",
+                "form-service": "Required Service",
+                "form-date": "Preferred Date",
+                "form-submit": "Confirm Appointment",
+                "login-title": "Admin Login Portal",
+                "login-subtitle": "Enter your credentials (e.g. it or haneen)",
+                "login-user-lbl": "Username",
+                "login-pass-lbl": "Password",
+                "login-btn": "Secure Login",
+                "dash-main-title": "Global Clinic ERP System (Ultimate ERP)",
+                "dash-exit": "Exit System",
+                "stat-total-app": "Total Active Appointments",
+                "stat-status": "Security & Status",
+                "stat-connected": "Connected to Global Security",
+                "table-app-title": "Patient Appointments & Bookings",
+                "btn-clear-app": "Clear Appointments Log",
+                "th-patient": "Patient Name",
+                "th-phone": "Phone Number",
+                "th-service": "Requested Service",
+                "th-date": "Appointment Date",
+                "th-action": "Actions",
+                "th-diag": "Medical Diagnosis",
+                "th-presc": "Prescription & Medications",
+                "th-item": "Item Name",
+                "th-qty": "Quantity",
+                "th-exp": "Expiry Date",
+                "th-emp": "Employee",
+                "th-role": "Role",
+                "th-base": "Base Salary",
+                "th-bonus": "Bonuses",
+                "th-deduct": "Deductions",
+                "th-net": "Net Payable",
+                "th-ins-comp": "Insurance Company",
+                "th-ins-pol": "Policy Number",
+                "th-doc": "Doctor Name",
+                "th-days": "Working Days",
+                "th-time": "Time Shift",
+                "med-add-title": "Register New Medical Record (Diagnosis & Rx)",
+                "btn-save-med": "Save Medical Record",
+                "med-list-title": "Previous Medical Records Archive",
+                "inv-add-title": "Add Medical / Drug Item to Inventory",
+                "btn-save-inv": "Add to Inventory",
+                "inv-list-title": "Current Inventory & Drug List",
+                "fin-inc-lbl": "Total Revenue",
+                "fin-exp-lbl": "Total Expenses & Salaries",
+                "fin-net-lbl": "Net Profit",
+                "fin-add-title": "Register New Financial Transaction (Income / Expense)",
+                "opt-inc": "Income (Clinic Revenue)",
+                "opt-exp": "Expense (Supplies / Misc)",
+                "btn-save-trans": "Save Financial Transaction",
+                "hr-add-title": "Payroll, Bonuses, & Deductions (Net Settlements)",
+                "btn-save-hr": "Calculate & Save Net Dues",
+                "hr-list-title": "Staff Payroll & Approved Dues Record",
+                "ins-add-title": "Register Medical Insurance Policy",
+                "btn-save-ins": "Save Insurance Policy",
+                "ins-list-title": "Active Medical Insurance Policies",
+                "shift-add-title": "Assign Doctor Shifts & Working Schedule",
+                "btn-save-shift": "Save Shift",
+                "shift-list-title": "Current Doctor Shifts Schedule",
+                "serv-add-title": "➕ Add New Treatment Service",
+                "btn-save-serv": "Save Service",
+                "serv-list-title": "Active Treatment Services",
+                "doc-add-title": "👨‍⚕️ Register New Consultant Doctor",
+                "btn-save-doc": "Add Doctor",
+                "doc-list-title": "Medical Staff List",
+                "usr-add-title": "👤 Add New System User & Permissions",
+                "opt-admin": "Admin / IT (Full Access)",
+                "opt-doctor": "Treating Doctor",
+                "btn-save-usr": "Save User",
+                "usr-list-title": "Authorized System Users",
+                "set-title": "🔑 Change Password for Current Account",
+                "set-new-pass": "New Password",
+                "btn-update-pass": "Update Password",
+
+                // Tabs
+                "tab-appointments": "Appointments Management",
+                "tab-medical": "Medical Records (EHR)",
+                "tab-pharmacy": "Pharmacy & Inventory",
+                "tab-insurance": "Medical Insurance",
+                "tab-shifts": "Doctors Shifts",
+                "tab-finance": "Finance & Profit P&L",
+                "tab-hr": "Payroll & Net Dues",
+                "tab-services": "Treatment Services",
+                "tab-doctors": "Medical Staff",
+                "tab-users": "Users & Permissions",
+                "tab-settings": "Account Security",
+
+                // Placeholders
+                "ph-patient": "Patient Name",
+                "ph-diag": "Clinical Diagnosis",
+                "ph-presc": "Prescription & Dosages",
+                "ph-item": "Item Name (e.g. Dental Anesthetic)",
+                "ph-qty": "Available Quantity",
+                "ph-trans-desc": "Transaction Description",
+                "ph-amount": "Amount",
+                "ph-emp-name": "Employee or Doctor Name",
+                "ph-emp-role": "Job Title",
+                "ph-emp-sal": "Base Salary",
+                "ph-emp-bonus": "Bonuses / Allowances",
+                "ph-emp-ded": "Deductions / Advances",
+                "ph-ins-comp": "Insurance Company Name",
+                "ph-ins-pol": "Policy / Card Number",
+                "ph-doc-name": "Doctor Name",
+                "ph-shift-days": "Working Days (e.g. Sun - Thu)",
+                "ph-shift-time": "Time Shift",
+                "ph-serv-title": "Service Title",
+                "ph-serv-desc": "Description & Technology",
+                "ph-doc-spec": "Specialization",
+                "ph-usr-name": "Username",
+                "ph-usr-pass": "Password"
+            }
+        };
+
+        let currentLang = 'ar';
+        let currentSessionUser = null;
+        let activeTabName = 'appointments';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            const root = document.getElementById('html-root');
+            root.setAttribute('lang', currentLang);
+            root.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+            document.getElementById('lang-btn-text').innerText = currentLang === 'ar' ? 'English' : 'عربي';
+
+            // تحديث العناصر النصية التي تحمل خاصية data-lang
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                const key = el.getAttribute('data-lang');
+                if(translations[currentLang][key]) {
+                    el.innerText = translations[currentLang][key];
+                }
+            });
+
+            // تحديث الحقول النصية المؤقتة placeholders
+            document.querySelectorAll('[data-lang-ph]').forEach(el => {
+                const key = el.getAttribute('data-lang-ph');
+                if(translations[currentLang][key]) {
+                    el.setAttribute('placeholder', translations[currentLang][key]);
+                }
+            });
+
+            document.title = translations[currentLang]["page-title"];
+            
+            loadServices();
+            loadDoctors();
+            if(currentSessionUser) {
+                setupRolePermissions();
+            }
+        }
+
+        // تهيئة البيانات الافتراضية
+        if(!localStorage.getItem('pearl_services')) {
+            localStorage.setItem('pearl_services', JSON.stringify([
+                { id: 1, title: currentLang === 'ar' ? 'تبييض الأسنان بالليزر العالمي' : 'Global Laser Teeth Whitening', desc: currentLang === 'ar' ? 'أحدث تقنيات تبييض الأسنان الفوري بدون حساسية.' : 'Latest instant laser whitening.' },
+                { id: 2, title: currentLang === 'ar' ? 'علاج جذور الأسنان المجهري' : 'Microscopic Root Canal', desc: currentLang === 'ar' ? 'علاج متطور لقنوات الجذور باستخدام المجهر.' : 'Advanced microscopic root canal treatment.' }
+            ]));
+        }
+
+        if(!localStorage.getItem('pearl_doctors')) {
+            localStorage.setItem('pearl_doctors', JSON.stringify([
+                { id: 1, name: currentLang === 'ar' ? 'د. حنين' : 'Dr. Haneen', spec: currentLang === 'ar' ? 'استشارية طب وتجميل الأسنان' : 'Dental Consultant' }
+            ]));
+        }
+
+        if(!localStorage.getItem('pearl_employees')) {
+            localStorage.setItem('pearl_employees', JSON.stringify([
+                { id: 1, name: 'منى محمد', role: 'ممرضة أسنان رئيسية', salary: 6000, bonus: 300, deduct: 100, net: 6200 }
+            ]));
+        }
+
+        if(!localStorage.getItem('pearl_inventory')) {
+            localStorage.setItem('pearl_inventory', JSON.stringify([
+                { id: 1, item: 'مخدر موضعى كاربول (بنج)', qty: 150, exp: '2028-05-12' }
+            ]));
+        }
+
+        if(!localStorage.getItem('pearl_records')) {
+            localStorage.setItem('pearl_records', JSON.stringify([
+                { id: 1, patient: 'خالد عبدالله', diagnosis: 'التهاب عصب الضرس الأول العلوي', prescription: 'أوجمنتين 1 كبسولة كل 12 ساعة' }
+            ]));
+        }
+
+        if(!localStorage.getItem('pearl_insurance')) {
+            localStorage.setItem('pearl_insurance', JSON.stringify([
+                { id: 1, patient: 'سارة خالد', company: 'شركة ضمان للتأمين الصحي', policy: 'ADN-998823' }
+            ]));
+        }
+
+        if(!localStorage.getItem('pearl_shifts')) {
+            localStorage.setItem('pearl_shifts', JSON.stringify([
+                { id: 1, doctor: 'د. حنين', days: 'الأحد - الأربعاء', time: '10:00 صباحاً - 06:00 مساءً' }
+            ]));
+        }
+
+        if(!localStorage.getItem('pearl_finance')) {
+            localStorage.setItem('pearl_finance', JSON.stringify([
+                { id: 1, desc: 'كشف واستشارة طبية', amount: 400, type: 'income' }
+            ]));
+        }
+
+        let storedUsers = JSON.parse(localStorage.getItem('pearl_users')) || [];
+        if(!storedUsers.some(u => u.username === 'it')) {
+            storedUsers.unshift({ username: 'it', password: 'it_password123', role: 'admin' });
+        }
+        if(!storedUsers.some(u => u.username === 'haneen')) {
+            storedUsers.push({ username: 'haneen', password: '1234', role: 'admin' });
+        }
+        localStorage.setItem('pearl_users', JSON.stringify(storedUsers));
+
+        function loadServices() {
+            let services = JSON.parse(localStorage.getItem('pearl_services')) || [];
+            const grid = document.getElementById('services-grid');
+            const select = document.getElementById('service-type');
+            const adminList = document.getElementById('admin-services-list');
+            
+            grid.innerHTML = '';
+            select.innerHTML = '';
+            if(adminList) adminList.innerHTML = '';
+
+            services.forEach(s => {
+                grid.innerHTML += `
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg transition">
+                        <div class="w-14 h-14 bg-blue-50 text-blue-700 rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-inner border border-blue-100">
+                            <i class="fa-solid fa-tooth"></i>
+                        </div>
+                        <h3 class="text-xl font-black mb-3 text-slate-900">${s.title}</h3>
+                        <p class="text-slate-600 leading-relaxed text-sm">${s.desc}</p>
+                    </div>
+                `;
+                select.innerHTML += `<option value="${s.title}">${s.title}</option>`;
+                if(adminList) {
+                    adminList.innerHTML += `
+                        <div class="flex justify-between items-center p-4 bg-slate-50 border border-slate-200 rounded-xl">
+                            <div><span class="font-bold text-slate-900 block">${s.title}</span><span class="text-xs text-slate-500">${s.desc}</span></div>
+                            <button onclick="deleteService(${s.id})" class="text-red-500 hover:text-red-700 p-2"><i class="fa-solid fa-trash-can"></i></button>
+                        </div>
+                    `;
+                }
+            });
+        }
+
+        function loadDoctors() {
+            let doctors = JSON.parse(localStorage.getItem('pearl_doctors')) || [];
+            const grid = document.getElementById('doctors-grid');
+            const adminList = document.getElementById('admin-doctors-list');
+            
+            grid.innerHTML = '';
+            if(adminList) adminList.innerHTML = '';
+
+            doctors.forEach(d => {
+                grid.innerHTML += `
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg text-center transition">
+                        <div class="w-20 h-20 bg-blue-50 text-blue-700 rounded-full flex items-center justify-center text-3xl mx-auto mb-4 shadow-inner border border-blue-100">
+                            <i class="fa-solid fa-user-doctor"></i>
+                        </div>
+                        <h3 class="text-xl font-black text-slate-900 mb-1">${d.name}</h3>
+                        <p class="text-blue-600 font-bold text-xs uppercase tracking-wider">${d.spec}</p>
+                    </div>
+                `;
+                if(adminList) {
+                    adminList.innerHTML += `
+                        <div class="flex justify-between items-center p-4 bg-slate-50 border border-slate-200 rounded-xl">
+                            <div><span class="font-bold text-slate-900 block">${d.name}</span><span class="text-xs text-blue-600 font-semibold">${d.spec}</span></div>
+                            <button onclick="deleteDoctor(${d.id})" class="text-red-500 hover:text-red-700 p-2"><i class="fa-solid fa-trash-can"></i></button>
+                        </div>
+                    `;
+                }
+            });
+        }
+
+        function loadPayroll() {
+            let employees = JSON.parse(localStorage.getItem('pearl_employees')) || [];
+            const tbody = document.getElementById('payroll-table-body');
+            if(!tbody) return;
+            tbody.innerHTML = '';
+            let totalNet = 0;
+
+            employees.forEach(e => {
+                let net = (Number(e.salary) + Number(e.bonus || 0)) - Number(e.deduct || 0);
+                e.net = net;
+                totalNet += net;
+                tbody.innerHTML += `
+                    <tr class="hover:bg-slate-50/80 transition">
+                        <td class="p-4 font-bold text-slate-900">${e.name}</td>
+                        <td class="p-4 text-slate-600">${e.role}</td>
+                        <td class="p-4">${e.salary}</td>
+                        <td class="p-4 text-emerald-600 font-bold">+${e.bonus || 0}</td>
+                        <td class="p-4 text-red-600 font-bold">-${e.deduct || 0}</td>
+                        <td class="p-4 font-black text-blue-700">${net}</td>
+                        <td class="p-4"><button onclick="deleteEmployee(${e.id})" class="text-red-500 hover:text-red-700 p-2"><i class="fa-solid fa-trash-can"></i></button></td>
+                    </tr>
+                `;
+            });
+            document.getElementById('total-payroll-box').innerText = `${currentLang === 'ar' ? 'إجمالي الصرف' : 'Total Payroll'}: ${totalNet}`;
+        }
+
+        function loadInventory() {
+            let inv = JSON.parse(localStorage.getItem('pearl_inventory')) || [];
+            const tbody = document.getElementById('inventory-table-body');
+            if(!tbody) return;
+            tbody.innerHTML = '';
+            inv.forEach(i => {
+                tbody.innerHTML += `
+                    <tr class="hover:bg-slate-50/80 transition">
+                        <td class="p-4 font-bold text-slate-900">${i.item}</td>
+                        <td class="p-4 font-bold">${i.qty}</td>
+                        <td class="p-4 text-slate-600">${i.exp}</td>
+                        <td class="p-4"><button onclick="deleteInventory(${i.id})" class="text-red-500 hover:text-red-700 p-2"><i class="fa-solid fa-trash-can"></i></button></td>
+                    </tr>
+                `;
+            });
+        }
+
+        function loadRecords() {
+            let recs = JSON.parse(localStorage.getItem('pearl_records')) || [];
+            const tbody = document.getElementById('records-table-body');
+            if(!tbody) return;
+            tbody.innerHTML = '';
+            recs.forEach(r => {
+                tbody.innerHTML += `
+                    <tr class="hover:bg-slate-50/80 transition">
+                        <td class="p-4 font-bold text-slate-900">${r.patient}</td>
+                        <td class="p-4">${r.diagnosis}</td>
+                        <td class="p-4 text-blue-700 font-semibold">${r.prescription}</td>
+                        <td class="p-4"><button onclick="deleteRecord(${r.id})" class="text-red-500 hover:text-red-700 p-2"><i class="fa-solid fa-trash-can"></i></button></td>
+                    </tr>
+                `;
+            });
+        }
+
+        function loadInsurance() {
+            let ins = JSON.parse(localStorage.getItem('pearl_insurance')) || [];
+            const tbody = document.getElementById('insurance-table-body');
+            if(!tbody) return;
+            tbody.innerHTML = '';
+            ins.forEach(i => {
+                tbody.innerHTML += `
+                    <tr class="hover:bg-slate-50/80 transition">
+                        <td class="p-4 font-bold text-slate-900">${i.patient}</td>
+                        <td class="p-4 text-blue-700 font-bold">${i.company}</td>
+                        <td class="p-4 font-mono">${i.policy}</td>
+                        <td class="p-4"><button onclick="deleteInsurance(${i.id})" class="text-red-500 hover:text-red-700 p-2"><i class="fa-solid fa-trash-can"></i></button></td>
+                    </tr>
+                `;
+            });
+        }
+
+        function loadShifts() {
+            let shifts = JSON.parse(localStorage.getItem('pearl_shifts')) || [];
+            const tbody = document.getElementById('shifts-table-body');
+            if(!tbody) return;
+            tbody.innerHTML = '';
+            shifts.forEach(s => {
+                tbody.innerHTML += `
+                    <tr class="hover:bg-slate-50/80 transition">
+                        <td class="p-4 font-bold text-slate-900">${s.doctor}</td>
+                        <td class="p-4 text-slate-600">${s.days}</td>
+                        <td class="p-4 text-blue-700 font-semibold">${s.time}</td>
+                        <td class="p-4"><button onclick="deleteShift(${s.id})" class="text-red-500 hover:text-red-700 p-2"><i class="fa-solid fa-trash-can"></i></button></td>
+                    </tr>
+                `;
+            });
+        }
+
+        function loadFinance() {
+            let trans = JSON.parse(localStorage.getItem('pearl_finance')) || [];
+            let employees = JSON.parse(localStorage.getItem('pearl_employees')) || [];
+            let totalSalaries = employees.reduce((sum, e) => sum + Number(e.net || e.salary), 0);
+
+            let income = 0;
+            let expenses = totalSalaries;
+
+            trans.forEach(t => {
+                if(t.type === 'income') income += Number(t.amount);
+                else expenses += Number(t.amount);
+            });
+
+            document.getElementById('fin-income').innerText = income;
+            document.getElementById('fin-expenses').innerText = expenses;
+            document.getElementById('fin-net').innerText = income - expenses;
+        }
+
+        function openAdminModal() {
+            document.getElementById('admin-modal').classList.remove('hidden');
+            document.getElementById('admin-modal').classList.add('flex');
+        }
+
+        function closeAdminModal() {
+            document.getElementById('admin-modal').classList.add('hidden');
+            document.getElementById('admin-modal').classList.remove('flex');
+        }
+
+        function handleAdminLogin(e) {
+            e.preventDefault();
+            const u = document.getElementById('login-username').value.trim();
+            const p = document.getElementById('admin-password').value.trim();
+            
+            let users = JSON.parse(localStorage.getItem('pearl_users')) || [];
+            let found = users.find(x => x.username === u && x.password === p);
+
+            if(found) {
+                currentSessionUser = found;
+                closeAdminModal();
+                document.getElementById('login-username').value = '';
+                document.getElementById('admin-password').value = '';
+                openDashboard();
+            } else {
+                alert(currentLang === 'ar' ? 'خطأ في اسم المستخدم أو كلمة المرور!' : 'Invalid username or password!');
+            }
+        }
+
+        function openDashboard() {
+            setupRolePermissions();
+            loadBookings();
+            loadServices();
+            loadDoctors();
+            loadPayroll();
+            loadInventory();
+            loadRecords();
+            loadInsurance();
+            loadShifts();
+            loadFinance();
+            loadUsersList();
+            document.getElementById('dashboard-modal').classList.remove('hidden');
+        }
+
+        function closeDashboard() {
+            document.getElementById('dashboard-modal').classList.add('hidden');
+        }
+
+        function setupRolePermissions() {
+            const container = document.getElementById('tab-buttons-container');
+            container.innerHTML = '';
+            
+            let roleTitle = currentSessionUser.username === 'it' ? (currentLang === 'ar' ? 'مدير تقنية المعلومات (IT)' : 'IT Administrator') : (currentLang === 'ar' ? 'مدير العيادة (د. حنين)' : 'Clinic Director (Dr. Haneen)');
+            
+            document.getElementById('user-role-badge').innerText = `${currentLang === 'ar' ? 'المستخدم' : 'User'}: ${currentSessionUser.username} | ${roleTitle}`;
+            document.getElementById('current-user-avatar').innerText = currentSessionUser.username.toUpperCase();
+
+            let tabsConfig = [
+                { id: 'appointments', labelKey: 'tab-appointments' },
+                { id: 'medical', labelKey: 'tab-medical' },
+                { id: 'pharmacy', labelKey: 'tab-pharmacy' },
+                { id: 'insurance', labelKey: 'tab-insurance' },
+                { id: 'shifts', labelKey: 'tab-shifts' },
+                { id: 'finance', labelKey: 'tab-finance' },
+                { id: 'hr', labelKey: 'tab-hr' },
+                { id: 'services', labelKey: 'tab-services' },
+                { id: 'doctors', labelKey: 'tab-doctors' },
+                { id: 'users', labelKey: 'tab-users' },
+                { id: 'settings', labelKey: 'tab-settings' }
+            ];
+
+            tabsConfig.forEach((tab) => {
+                const isActive = activeTabName === tab.id;
+                container.innerHTML += `
+                    <button onclick="switchTab('${tab.id}')" id="tab-btn-${tab.id}" class="${isActive ? 'bg-blue-800 text-white shadow' : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-100'} px-5 py-2.5 rounded-xl font-bold text-sm transition" data-lang="${tab.labelKey}">${translations[currentLang][tab.labelKey]}</button>
+                `;
+            });
+
+            switchTab(activeTabName);
+        }
+
+        function switchTab(tabName) {
+            activeTabName = tabName;
+            ['appointments', 'medical', 'pharmacy', 'insurance', 'shifts', 'finance', 'hr', 'services', 'doctors', 'users', 'settings'].forEach(t => {
+                const el = document.getElementById(`tab-${t}`);
+                const btn = document.getElementById(`tab-btn-${t}`);
+                if(el) {
+                    if(t === tabName) el.classList.remove('hidden');
+                    else el.classList.add('hidden');
+                }
+                if(btn) {
+                    if(t === tabName) btn.className = "bg-blue-800 text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow transition";
+                    else btn.className = "bg-white text-slate-700 border border-slate-200 hover:bg-slate-100 px-5 py-2.5 rounded-xl font-bold text-sm transition";
+                }
+            });
+        }
+
+        document.getElementById('booking-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const newBooking = {
+                id: Date.now(),
+                name: document.getElementById('patient-name').value,
+                phone: document.getElementById('patient-phone').value,
+                service: document.getElementById('service-type').value,
+                date: document.getElementById('booking-date').value
+            };
+            let bookings = JSON.parse(localStorage.getItem('pearl_bookings')) || [];
+            bookings.push(newBooking);
+            localStorage.setItem('pearl_bookings', JSON.stringify(bookings));
+            alert(currentLang === 'ar' ? 'تم حجز موعدك بنجاح!' : 'Appointment booked successfully!');
+            this.reset();
+        });
+
+        function loadBookings() {
+            let bookings = JSON.parse(localStorage.getItem('pearl_bookings')) || [];
+            document.getElementById('dash-total').innerText = bookings.length;
+            const tbody = document.getElementById('bookings-table-body');
+            if(!tbody) return;
+            tbody.innerHTML = '';
+            if(bookings.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="5" class="p-8 text-center text-slate-400 font-semibold">${currentLang === 'ar' ? 'لا توجد مواعيد مسجلة حالياً' : 'No bookings registered'}</td></tr>`;
+                return;
+            }
+            bookings.forEach(b => {
+                tbody.innerHTML += `
+                    <tr class="hover:bg-slate-50/80 transition">
+                        <td class="p-4 font-bold text-slate-900">${b.name}</td>
+                        <td class="p-4 text-slate-600">${b.phone}</td>
+                        <td class="p-4"><span class="bg-blue-50 text-blue-800 px-3 py-1 rounded-full text-xs font-bold border border-blue-100">${b.service}</span></td>
+                        <td class="p-4 text-slate-600">${b.date}</td>
+                        <td class="p-4"><button onclick="deleteBooking(${b.id})" class="text-red-500 hover:text-red-700 bg-red-50 hover:bg-red-100 p-2 rounded-lg transition"><i class="fa-solid fa-trash-can"></i></button></td>
+                    </tr>
+                `;
+            });
+        }
+
+        function deleteBooking(id) {
+            let bookings = JSON.parse(localStorage.getItem('pearl_bookings')) || [];
+            bookings = bookings.filter(b => b.id !== id);
+            localStorage.setItem('pearl_bookings', JSON.stringify(bookings));
+            loadBookings();
+        }
+
+        function clearBookings() {
+            if(confirm(currentLang === 'ar' ? 'هل أنت متأكد من مسح كافة سجلات المواعيد؟' : 'Are you sure to clear all bookings?')) {
+                localStorage.removeItem('pearl_bookings');
+                loadBookings();
+            }
+        }
+
+        function handleAddRecord(e) {
+            e.preventDefault();
+            const patient = document.getElementById('rec-patient').value;
+            const diagnosis = document.getElementById('rec-diagnosis').value;
+            const prescription = document.getElementById('rec-prescription').value;
+            let recs = JSON.parse(localStorage.getItem('pearl_records')) || [];
+            recs.push({ id: Date.now(), patient, diagnosis, prescription });
+            localStorage.setItem('pearl_records', JSON.stringify(recs));
+            document.getElementById('rec-patient').value = '';
+            document.getElementById('rec-diagnosis').value = '';
+            document.getElementById('rec-prescription').value = '';
+            loadRecords();
+            alert(currentLang === 'ar' ? 'تم حفظ الملف الطبي بنجاح!' : 'Medical record saved successfully!');
+        }
+
+        function deleteRecord(id) {
+            let recs = JSON.parse(localStorage.getItem('pearl_records')) || [];
+            recs = recs.filter(r => r.id !== id);
+            localStorage.setItem('pearl_records', JSON.stringify(recs));
+            loadRecords();
+        }
+
+        function handleAddInventory(e) {
+            e.preventDefault();
+            const item = document.getElementById('inv-item').value;
+            const qty = document.getElementById('inv-qty').value;
+            const exp = document.getElementById('inv-exp').value;
+            let inv = JSON.parse(localStorage.getItem('pearl_inventory')) || [];
+            inv.push({ id: Date.now(), item, qty, exp });
+            localStorage.setItem('pearl_inventory', JSON.stringify(inv));
+            document.getElementById('inv-item').value = '';
+            document.getElementById('inv-qty').value = '';
+            document.getElementById('inv-exp').value = '';
+            loadInventory();
+            alert(currentLang === 'ar' ? 'تم إضافة الصنف بنجاح!' : 'Item added successfully!');
+        }
+
+        function deleteInventory(id) {
+            let inv = JSON.parse(localStorage.getItem('pearl_inventory')) || [];
+            inv = inv.filter(i => i.id !== id);
+            localStorage.setItem('pearl_inventory', JSON.stringify(inv));
+            loadInventory();
+        }
+
+        function handleAddInsurance(e) {
+            e.preventDefault();
+            const patient = document.getElementById('ins-patient').value;
+            const company = document.getElementById('ins-company').value;
+            const policy = document.getElementById('ins-policy').value;
+            let ins = JSON.parse(localStorage.getItem('pearl_insurance')) || [];
+            ins.push({ id: Date.now(), patient, company, policy });
+            localStorage.setItem('pearl_insurance', JSON.stringify(ins));
+            document.getElementById('ins-patient').value = '';
+            document.getElementById('ins-company').value = '';
+            document.getElementById('ins-policy').value = '';
+            loadInsurance();
+            alert(currentLang === 'ar' ? 'تم حفظ ملف التأمين بنجاح!' : 'Insurance policy saved!');
+        }
+
+        function deleteInsurance(id) {
+            let ins = JSON.parse(localStorage.getItem('pearl_insurance')) || [];
+            ins = ins.filter(i => i.id !== id);
+            localStorage.setItem('pearl_insurance', JSON.stringify(ins));
+            loadInsurance();
+        }
+
+        function handleAddShift(e) {
+            e.preventDefault();
+            const doctor = document.getElementById('shift-doctor').value;
+            const days = document.getElementById('shift-days').value;
+            const time = document.getElementById('shift-time').value;
+            let shifts = JSON.parse(localStorage.getItem('pearl_shifts')) || [];
+            shifts.push({ id: Date.now(), doctor, days, time });
+            localStorage.setItem('pearl_shifts', JSON.stringify(shifts));
+            document.getElementById('shift-doctor').value = '';
+            document.getElementById('shift-days').value = '';
+            document.getElementById('shift-time').value = '';
+            loadShifts();
+            alert(currentLang === 'ar' ? 'تم حفظ المناوبة بنجاح!' : 'Shift saved successfully!');
+        }
+
+        function deleteShift(id) {
+            let shifts = JSON.parse(localStorage.getItem('pearl_shifts')) || [];
+            shifts = shifts.filter(s => s.id !== id);
+            localStorage.setItem('pearl_shifts', JSON.stringify(shifts));
+            loadShifts();
+        }
+
+        function handleAddTransaction(e) {
+            e.preventDefault();
+            const desc = document.getElementById('tr-desc').value;
+            const amount = document.getElementById('tr-amount').value;
+            const type = document.getElementById('tr-type').value;
+            let trans = JSON.parse(localStorage.getItem('pearl_finance')) || [];
+            trans.push({ id: Date.now(), desc, amount, type });
+            localStorage.setItem('pearl_finance', JSON.stringify(trans));
+            document.getElementById('tr-desc').value = '';
+            document.getElementById('tr-amount').value = '';
+            loadFinance();
+            alert(currentLang === 'ar' ? 'تم اعتماد المعاملة المالية!' : 'Transaction recorded!');
+        }
+
+        function handleAddEmployee(e) {
+            e.preventDefault();
+            const name = document.getElementById('emp-name').value;
+            const role = document.getElementById('emp-role').value;
+            const salary = document.getElementById('emp-salary').value;
+            const bonus = document.getElementById('emp-bonus').value || 0;
+            const deduct = document.getElementById('emp-deduct').value || 0;
+            
+            let employees = JSON.parse(localStorage.getItem('pearl_employees')) || [];
+            employees.push({ id: Date.now(), name, role, salary, bonus, deduct });
+            localStorage.setItem('pearl_employees', JSON.stringify(employees));
+            
+            document.getElementById('emp-name').value = '';
+            document.getElementById('emp-role').value = '';
+            document.getElementById('emp-salary').value = '';
+            document.getElementById('emp-bonus').value = '';
+            document.getElementById('emp-deduct').value = '';
+            
+            loadPayroll();
+            loadFinance();
+            alert(currentLang === 'ar' ? 'تم احتساب المستحقات!' : 'Dues calculated!');
+        }
+
+        function deleteEmployee(id) {
+            let employees = JSON.parse(localStorage.getItem('pearl_employees')) || [];
+            employees = employees.filter(e => e.id !== id);
+            localStorage.setItem('pearl_employees', JSON.stringify(employees));
+            loadPayroll();
+            loadFinance();
+        }
+
+        function handleAddService(e) {
+            e.preventDefault();
+            const title = document.getElementById('new-service-title').value;
+            const desc = document.getElementById('new-service-desc').value;
+            let services = JSON.parse(localStorage.getItem('pearl_services')) || [];
+            services.push({ id: Date.now(), title, desc });
+            localStorage.setItem('pearl_services', JSON.stringify(services));
+            document.getElementById('new-service-title').value = '';
+            document.getElementById('new-service-desc').value = '';
+            loadServices();
+            alert(currentLang === 'ar' ? 'تم إضافة الخدمة!' : 'Service added!');
+        }
+
+        function deleteService(id) {
+            let services = JSON.parse(localStorage.getItem('pearl_services')) || [];
+            services = services.filter(s => s.id !== id);
+            localStorage.setItem('pearl_services', JSON.stringify(services));
+            loadServices();
+        }
+
+        function handleAddDoctor(e) {
+            e.preventDefault();
+            const name = document.getElementById('new-doc-name').value;
+            const spec = document.getElementById('new-doc-spec').value;
+            let doctors = JSON.parse(localStorage.getItem('pearl_doctors')) || [];
+            doctors.push({ id: Date.now(), name, spec });
+            localStorage.setItem('pearl_doctors', JSON.stringify(doctors));
+            document.getElementById('new-doc-name').value = '';
+            document.getElementById('new-doc-spec').value = '';
+            loadDoctors();
+            alert(currentLang === 'ar' ? 'تم إضافة الطبيب!' : 'Doctor added!');
+        }
+
+        function deleteDoctor(id) {
+            let doctors = JSON.parse(localStorage.getItem('pearl_doctors')) || [];
+            doctors = doctors.filter(d => d.id !== id);
+            localStorage.setItem('pearl_doctors', JSON.stringify(doctors));
+            loadDoctors();
+        }
+
+        function handleAddUser(e) {
+            e.preventDefault();
+            const username = document.getElementById('new-user-name').value.trim();
+            const password = document.getElementById('new-user-pass').value.trim();
+            const role = document.getElementById('new-user-role').value;
+            let users = JSON.parse(localStorage.getItem('pearl_users')) || [];
+            users.push({ username, password, role });
+            localStorage.setItem('pearl_users', JSON.stringify(users));
+            document.getElementById('new-user-name').value = '';
+            document.getElementById('new-user-pass').value = '';
+            loadUsersList();
+            alert(currentLang === 'ar' ? 'تمت إضافة المستخدم!' : 'User added!');
+        }
+
+        function loadUsersList() {
+            let users = JSON.parse(localStorage.getItem('pearl_users')) || [];
+            const list = document.getElementById('users-list');
+            if(!list) return;
+            list.innerHTML = '';
+            users.forEach(u => {
+                list.innerHTML += `
+                    <div class="flex justify-between items-center p-4 bg-slate-50 border border-slate-200 rounded-xl">
+                        <div>
+                            <span class="font-black text-slate-900 block flex items-center gap-2"><i class="fa-solid fa-user-shield text-blue-600"></i>${u.username}</span>
+                            <span class="text-xs text-blue-600 font-bold">${currentLang === 'ar' ? 'الصلاحية' : 'Role'}: ${u.role}</span>
+                        </div>
+                        <button onclick="deleteUser('${u.username}')" class="text-red-500 hover:text-red-700 p-2"><i class="fa-solid fa-trash-can"></i></button>
+                    </div>
+                `;
+            });
+        }
+
+        function deleteUser(username) {
+            if(username === 'it' || username === 'haneen') {
+                alert(currentLang === 'ar' ? 'لا يمكن حذف الحسابات الرئيسية للنظام!' : 'Cannot delete main system accounts!');
+                return;
+            }
+            let users = JSON.parse(localStorage.getItem('pearl_users')) || [];
+            users = users.filter(u => u.username !== username);
+            localStorage.setItem('pearl_users', JSON.stringify(users));
+            loadUsersList();
+        }
+
+        function handleChangePassword(e) {
+            e.preventDefault();
+            const newPass = document.getElementById('change-pass-input').value.trim();
+            let users = JSON.parse(localStorage.getItem('pearl_users')) || [];
+            users = users.map(u => {
+                if(u.username === currentSessionUser.username) u.password = newPass;
+                return u;
+            });
+            localStorage.setItem('pearl_users', JSON.stringify(users));
+            document.getElementById('change-pass-input').value = '';
+            alert(currentLang === 'ar' ? 'تم تحديث كلمة المرور بنجاح!' : 'Password updated successfully!');
+        }
+
+        loadServices();
+        loadDoctors();
+    </script>
+</body>
+</html>
