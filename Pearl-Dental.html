@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="html-root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">النظام العالمي الشامل لعيادات بيرل | PEARL Ultimate ERP</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Cairo -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Cairo', sans-serif; }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md sticky top-0 z-50 border-b border-blue-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <div class="w-12 h-12 bg-gradient-to-tr from-blue-700 to-indigo-600 rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg border border-blue-300">
+                        <i class="fa-solid fa-tooth"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-black text-blue-950 tracking-wide block">PEARL DENTAL</span>
+                        <span class="text-xs text-blue-600 font-bold uppercase tracking-widest" data-lang="clinic-subtitle">Ultimate Global ERP</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-6 rtl:space-x-reverse items-center">
+                    <a href="#home" class="text-slate-600 hover:text-blue-700 font-semibold transition" data-lang="nav-home">الرئيسية</a>
+                    <a href="#services" class="text-slate-600 hover:text-blue-700 font-semibold transition" data-lang="nav-services">الخدمات العلاجية</a>
+                    <a href="#doctors" class="text-slate-600 hover:text-blue-700 font-semibold transition" data-lang="nav-doctors">الكادر الطبي</a>
+                    <a href="#booking" class="text-slate-600 hover:text-blue-700 font-semibold transition" data-lang="nav-booking">حجز المواعيد</a>
+                    
+                    <button onclick="toggleLanguage()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-3.5 py-2 rounded-xl text-sm font-bold transition flex items-center gap-1.5 shadow-sm">
+                        <i class="fa-solid fa-globe text-blue-600"></i> <span id="lang-btn-text">English</span>
+                    </button>
+
+                    <button onclick="openAdminModal()" class="bg-gradient-to-r from-blue-800 to-indigo-900 hover:from-blue-900 hover:to-indigo-950 text-white px-5 py-2.5 rounded-xl font-bold shadow-md transition flex items-center gap-2">
+                        <i class="fa-solid fa-shield-halved"></i> <span data-lang="nav-admin">بوابة الإدارة الشاملة</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-gradient-to-tr from-slate-950 via-blue-950 to-blue-800 text-white py-28 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="bg-blue-800/60 text-blue-200 text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wider inline-block mb-4 border border-blue-500/30 backdrop-blur-md" data-lang="hero-tag">نظام الإدارة الصحية العالمي المتكامل</span>
+                    <h1 class="text-4xl md:text-5xl font-black leading-tight mb-6" data-lang="hero-title">التميز في رعاية الأسنان بأحدث التقنيات الدولية</h1>
+                    <p class="text-slate-300 text-lg mb-8 leading-relaxed" data-lang="hero-desc">منظومة رقمية شاملة لإدارة العيادات، الملفات الطبية، التأمين الطبي، الحسابات، وشؤون الموظفين بدقة متناهية.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#booking" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition flex items-center gap-2" data-lang="hero-btn1"><i class="fa-solid fa-calendar-plus"></i> احجز موعدك الآن</a>
+                        <a href="#services" class="border border-slate-600 hover:bg-slate-800/50 text-white font-semibold px-8 py-4 rounded-xl transition" data-lang="hero-btn2">استكشف خدماتنا</a>
+                    </div>
+                </div>
+                <div class="hidden md:flex justify-center">
+                    <div class="w-80 h-80 bg-blue-900/20 rounded-3xl flex items-center justify-center p-8 shadow-2xl border border-blue-500/20 backdrop-blur-xl relative">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-blue-600/10 to-transparent rounded-3xl"></div>
+                        <i class="fa-solid fa-hospital text-9xl text-blue-300/90 drop-shadow-2xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl font-black text-slate-900 mb-4" data-lang="services-section-title">خدماتنا الطبية المتميزة</h2>
+                <p class="text-slate-600" data-lang="services-section-subtitle">نقدم أحدث حلول طب وتجميل الأسنان بأعلى معايير الأمان والتعقيم العالمي</p>
+            </div>
+            <div id="services-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+        </div>
+    </section>
+
+    <!-- Doctors Section -->
+    <section id="doctors" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl font-black text-slate-900 mb-4" data-lang="doctors-section-title">نخبة الأطباء والاستشاريين</h2>
+                <p class="text-slate-600" data-lang="doctors-section-subtitle">فريق طبي محترف ذو اعتمادات دولية لضمان أعلى نسب النجاح والرعاية</p>
+            </div>
+            <div id="doctors-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section id="booking" class="py-24 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-slate-50 p-8 md:p-12 rounded-3xl shadow-sm border border-slate-200">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-black text-slate-900 mb-2" data-lang="booking-title">حجز موعد جديد</h2>
+                    <p class="text-slate-600" data-lang="booking-subtitle">قم بتعبئة بياناتك وسنقوم بالتنسيق والتأكيد الفوري لموعدك</p>
+                </div>
+                <form id="booking-form" class="space-y-6" onsubmit="handleBookingSubmit(event)">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-slate-700 font-bold mb-2 text-sm" data-lang="form-name">اسم المريض الكامل</label>
+                            <input type="text" id="patient-name" class="w-full border border-slate-300 p-4 rounded-xl bg-white focus:ring-2 focus:ring-blue-600 focus:outline-none" required>
+                        </div>
+                        <div>
+                            <label class="block text-slate-700 font-bold mb-2 text-sm" data-lang="form-phone">رقم الهاتف المحمول</label>
+                            <input type="tel" id="patient-phone" class="w-full border border-slate-300 p-4 rounded-xl bg-white focus:ring-2 focus:ring-blue-600 focus:outline-none" placeholder="+971 50 000 0000" required>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-slate-700 font-bold mb-2 text-sm" data-lang="form-service">الخدمة العلاجية المطلوبة</label>
+                            <select id="service-type" class="w-full border border-slate-300 p-4 rounded-xl bg-white focus:ring-2 focus:ring-blue-600 focus:outline-none"></select>
+                        </div>
+                        <div>
+                            <label class="block text-slate-700 font-bold mb-2 text-sm" data-lang="form-date">تاريخ الموعد المفضل</label>
+                            <input type="date" id="booking-date" class="w-full border border-slate-300 p-4 rounded-xl bg-white focus:ring-2 focus:ring-blue-600 focus:outline-none" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-700 hover:bg-blue-800 text-white font-bold py-4 rounded-xl shadow-lg transition duration-200 text-lg flex items-center justify-center gap-2" data-lang="form-submit"><i class="fa-solid fa-circle-check"></i> تأكيد حجز الموعد</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Login Modal -->
+    <div id="admin-modal" class="fixed inset-0 bg-slate-950/70 backdrop-blur-md hidden items-center justify-center z-50 p-4">
+        <div class="bg-white w-full max-w-md p-8 rounded-3xl shadow-2xl relative border border-slate-100">
+            <button onclick="closeAdminModal()" class="absolute top-4 start-4 text-slate-400 hover:text-slate-600 text-xl"><i class="fa-solid fa-xmark"></i></button>
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-blue-50 text-blue-700 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-3 shadow-inner border border-blue-100">
+                    <i class="fa-solid fa-user-lock"></i>
+                </div>
+                <h3 class="text-2xl font-black text-slate-900" data-lang="login-title">تسجيل دخول نظام الإدارة</h3>
+                <p class="text-slate-500 text-sm mt-1" data-lang="login-subtitle">أدخل بيانات الاعتماد (مثال: it أو haneen)</p>
+            </div>
+            <form onsubmit="handleAdminLogin(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-600 mb-1" data-lang="login-user-lbl">اسم المستخدم</label>
+                    <input type="text" id="login-username" class="w-full border border-slate-300 p-3.5 rounded-xl focus:ring-2 focus:ring-blue-600 focus:outline-none" placeholder="it أو haneen" required>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-600 mb-1" data-lang="login-pass-lbl">كلمة المرور</label>
+                    <input type="password" id="admin-password" class="w-full border border-slate-300 p-3.5 rounded-xl focus:ring-2 focus:ring-blue-600 focus:outline-none" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="w-full bg-blue-900 hover:bg-blue-950 text-white font-bold py-3.5 rounded-xl shadow-md transition" data-lang="login-btn">دخول آمن للنظام</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard Modal (Ultimate Global ERP System) -->
+    <div id="dashboard-modal" class="fixed inset-0 bg-slate-950/90 backdrop-blur-lg hidden z-50 overflow-y-auto p-4 md:p-6">
+        <div class="bg-white max-w-7xl mx-auto rounded-3xl shadow-2xl overflow-hidden min-h-[92vh] flex flex-col border border-slate-700">
+            <!-- Header -->
+            <div class="bg-slate-900 text-white p-6 flex justify-between items-center border-b border-slate-800">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center font-black text-lg shadow" id="current-user-avatar">IT</div>
+                    <div>
+                        <h2 class="text-xl font-black tracking-wide" id="dashboard-title" data-lang="dash-main-title">النظام العالمي الشامل للعيادات (Ultimate ERP)</h2>
+                        <p class="text-xs text-blue-400 font-semibold" id="user-role-badge">صلاحيات كاملة مطلقة</p>
+                    </div>
+                </div>
+                <button onclick="closeDashboard()" class="bg-slate-800 hover:bg-red-600 text-slate-200 hover:text-white px-5 py-2.5 rounded-xl text-sm font-bold transition flex items-center gap-2"><i class="fa-solid fa-power-off"></i> <span data-lang="dash-exit">خروج من النظام</span></button>
+            </div>
+            
+            <!-- Body Content -->
+            <div class="p-6 md:p-8 flex-1 bg-slate-50 space-y-8">
+                <!-- أزرار التنقل بين الأقسام -->
+                <div id="tab-buttons-container" class="flex flex-wrap gap-3 border-b border-slate-200 pb-4"></div>
+
+                <!-- 1. الحجوزات والمواعيد -->
+                <div id="tab-appointments" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex items-center justify-between">
+                            <div>
+                                <p class="text-slate-500 text-xs font-bold uppercase" data-lang="stat-total-app">إجمالي المواعيد النشطة</p>
+                                <h3 id="dash-total" class="text-3xl font-black text-blue-950 mt-1">0</h3>
+                            </div>
+                            <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-2xl shadow-sm"><i class="fa-solid fa-calendar-check"></i></div>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex items-center justify-between">
+                            <div>
+                                <p class="text-slate-500 text-xs font-bold uppercase" data-lang="stat-status">حالة الأمان والاتصال</p>
+                                <h3 class="text-lg font-bold text-emerald-600 mt-1 flex items-center gap-2"><i class="fa-solid fa-circle text-xs"></i> <span data-lang="stat-connected">متصل بنظام الأمان العالمي</span></h3>
+                            </div>
+                            <div class="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl shadow-sm"><i class="fa-solid fa-shield-halved"></i></div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                        <div class="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
+                            <h3 class="font-black text-slate-900 text-lg" data-lang="table-app-title">قائمة المواعيد وحجوزات المرضى</h3>
+                            <button onclick="clearBookings()" class="text-red-600 hover:text-red-700 bg-red-50 hover:bg-red-100 px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5"><i class="fa-solid fa-trash-can"></i> <span data-lang="btn-clear-app">مسح سجل المواعيد</span></button>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-start rtl:text-right border-collapse">
+                                <thead>
+                                    <tr class="bg-slate-100/80 text-slate-600 text-xs font-black uppercase border-b border-slate-200">
+                                        <th class="p-4" data-lang="th-patient">اسم المريض</th>
+                                        <th class="p-4" data-lang="th-phone">رقم الهاتف</th>
+                                        <th class="p-4" data-lang="th-service">الخدمة المطلوبة</th>
+                                        <th class="p-4" data-lang="th-date">تاريخ الموعد</th>
+                                        <th class="p-4" data-lang="th-action">الإجراءات</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="bookings-table-body" class="text-sm divide-y divide-slate-100"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. السجلات الطبية (EHR) -->
+                <div id="tab-medical" class="hidden space-y-6">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                        <h3 class="text-lg font-black text-slate-900 mb-4 flex items-center gap-2"><i class="fa-solid fa-notes-medical text-blue-600"></i> <span data-lang="med-add-title">تسجيل ملف طبي جديد (تشخيص ووصفة)</span></h3>
+                        <form onsubmit="handleAddRecord(event)" class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                            <input type="text" id="rec-patient" placeholder="اسم المريض" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required>
+                            <input type="text" id="rec-diagnosis" placeholder="التشخيص الطبي الإكلينيكي" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required>
+                            <input type="text" id="rec-prescription" placeholder="الوصفة الطبية (الأدوية والجرعات)" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required>
+                            <button type="submit" class="bg-blue-800 hover:bg-blue-900 text-white font-bold py-3.5 rounded-xl text-sm transition shadow" data-lang="btn-save-med">حفظ الملف الطبي</button>
+                        </form>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                        <h3 class="text-lg font-black text-slate-900 mb-4" data-lang="med-list-title">أرشيف الملفات والسجلات الطبية السابقة</h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-start rtl:text-right border-collapse">
+                                <thead>
+                                    <tr class="bg-slate-100 text-slate-600 text-xs font-black uppercase border-b border-slate-200">
+                                        <th class="p-4" data-lang="th-patient">اسم المريض</th>
+                                        <th class="p-4" data-lang="th-diag">التشخيص الطبي</th>
+                                        <th class="p-4" data-lang="th-presc">الأدوية والوصفة</th>
+                                        <th class="p-4" data-lang="th-action">الإجراء</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="records-table-body" class="text-sm divide-y divide-slate-100"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. الصيدلية والمخزون -->
+                <div id="tab-pharmacy" class="hidden space-y-6">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                        <h3 class="text-lg font-black text-slate-900 mb-4 flex items-center gap-2"><i class="fa-solid fa-pills text-blue-600"></i> <span data-lang="inv-add-title">إضافة صنف طبي أو دوائي للمخزون</span></h3>
+                        <form onsubmit="handleAddInventory(event)" class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                            <input type="text" id="inv-item" placeholder="اسم الصنف (مثلاً: بنج أسنان)" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required>
+                            <input type="number" id="inv-qty" placeholder="الكمية المتاحة" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required>
+                            <input type="date" id="inv-exp" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required>
+                            <button type="submit" class="bg-blue-800 hover:bg-blue-900 text-white font-bold py-3.5 rounded-xl text-sm transition shadow" data-lang="btn-save-inv">إضافة للمخزون</button>
+                        </form>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                        <h3 class="text-lg font-black text-slate-900 mb-4" data-lang="inv-list-title">قائمة المخزون والأدوية الحالية</h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-start rtl:text-right border-collapse">
+                                <thead>
+                                    <tr class="bg-slate-100 text-slate-600 text-xs font-black uppercase border-b border-slate-200">
+                                        <th class="p-4" data-lang="th-item">اسم الصنف</th>
+                                        <th class="p-4" data-lang="th-qty">الكمية</th>
+                                        <th class="p-4" data-lang="th-exp">تاريخ انتهاء الصلاحية</th>
+                                        <th class="p-4" data-lang="th-action">الإجراء</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="inventory-table-body" class="text-sm divide-y divide-slate-100"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. الحسابات والخزينة والأرباح -->
+                <div id="tab-finance" class="hidden space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                            <p class="text-slate-500 text-xs font-bold uppercase" data-lang="fin-inc-lbl">إجمالي الإيرادات</p>
+                            <h3 id="fin-income" class="text-3xl font-black text-emerald-600 mt-1">0</h3>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                            <p class="text-slate-500 text-xs font-bold uppercase" data-lang="fin-exp-lbl">إجمالي المصروفات والرواتب</p>
+                            <h3 id="fin-expenses" class="text-3xl font-black text-red-600 mt-1">0</h3>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                            <p class="text-slate-500 text-xs font-bold uppercase" data-lang="fin-net-lbl">صافي الأرباح</p>
+                            <h3 id="fin-net" class="text-3xl font-black text-blue-950 mt-1">0</h3>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                        <h3 class="text-lg font-black text-slate-900 mb-4 flex items-center gap-2"><i class="fa-solid fa-file-invoice-dollar text-blue-600"></i> <span data-lang="fin-add-title">تسجيل معاملة مالية جديدة (إيراد أو مصروف)</span></h3>
+                        <form onsubmit="handleAddTransaction(event)" class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                            <input type="text" id="tr-desc" placeholder="بيان المعاملة" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required>
+                            <input type="number" id="tr-amount" placeholder="المبلغ" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required>
+                            <select id="tr-type" class="border border-slate-300 p-3.5 rounded-xl text-sm bg-white focus:ring-2 focus:ring-blue-600 focus:outline-none">
+                                <option value="income" data-lang="opt-inc">إيراد (دخل العيادة)</option>
+                                <option value="expense" data-lang="opt-exp">مصروف (نثريات/مشتريات)</option>
+                            </select>
+                            <button type="submit" class="bg-blue-800 hover:bg-blue-900 text-white font-bold py-3.5 rounded-xl text-sm transition shadow" data-lang="btn-save-trans">حفظ المعاملة المالية</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- 5. إدارة الموارد البشرية والرواتب -->
+                <div id="tab-hr" class="hidden space-y-6">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                        <h3 class="text-lg font-black text-slate-900 mb-4 flex items-center gap-2"><i class="fa-solid fa-hand-holding-dollar text-blue-600"></i> <span data-lang="hr-add-title">نظام الرواتب والمكافآت والخصومات</span></h3>
+                        <form onsubmit="handleAddEmployee(event)" class="grid grid-cols-1 md:grid-cols-6 gap-4">
+                            <input type="text" id="emp-name" placeholder="اسم الموظف أو الطبيب" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required>
+                            <input type="text" id="emp-role" placeholder="المسمى الوظيفي" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required>
+                            <input type="number" id="emp-salary" placeholder="الراتب الأساسي" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required>
+                            <input type="number" id="emp-bonus" placeholder="المكافآت" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" value="0">
+                            <input type="number" id="emp-deduct" placeholder="الخصومات" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" value="0">
+                            <button type="submit" class="bg-blue-800 hover:bg-blue-900 text-white font-bold py-3.5 rounded-xl text-sm transition shadow md:col-span-6" data-lang="btn-save-hr">حفظ المستحقات النهائية للموظف</button>
+                        </form>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-lg font-black text-slate-900" data-lang="hr-list-title">سجل رواتب الطاقم والمستحقات المعتمدة</h3>
+                            <span class="bg-blue-50 text-blue-900 px-4 py-2 rounded-xl font-black text-sm border border-blue-100 shadow-sm" id="total-payroll-box">إجمالي الصرف: 0</span>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-start rtl:text-right border-collapse">
+                                <thead>
+                                    <tr class="bg-slate-100 text-slate-600 text-xs font-black uppercase border-b border-slate-200">
+                                        <th class="p-4" data-lang="th-emp">الموظف</th>
+                                        <th class="p-4" data-lang="th-role">الوظيفة</th>
+                                        <th class="p-4" data-lang="th-base">الأساسي</th>
+                                        <th class="p-4" data-lang="th-bonus">المكافآت</th>
+                                        <th class="p-4" data-lang="th-deduct">الخصومات</th>
+                                        <th class="p-4" data-lang="th-net">صافي المستحق</th>
+                                        <th class="p-4" data-lang="th-action">الإجراء</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="payroll-table-body" class="text-sm divide-y divide-slate-100"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. التأمين الطبي -->
+                <div id="tab-insurance" class="hidden space-y-6">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                        <h3 class="text-lg font-black text-slate-900 mb-4 flex items-center gap-2"><i class="fa-solid fa-shield-heart text-blue-600"></i> <span data-lang="ins-add-title">تسجيل بوليصة تأمين طبي لمرضى العيادة</span></h3>
+                        <form onsubmit="handleAddInsurance(event)" class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                            <input type="text" id="ins-patient" placeholder="اسم المريض" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required>
+                            <input type="text" id="ins-company" placeholder="اسم شركة التأمين" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required>
+                            <input type="text" id="ins-policy" placeholder="رقم البوليصة / الكارت" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required>
+                            <button type="submit" class="bg-blue-800 hover:bg-blue-900 text-white font-bold py-3.5 rounded-xl text-sm transition shadow" data-lang="btn-save-ins">حفظ ملف التأمين</button>
+                        </form>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                        <h3 class="text-lg font-black text-slate-900 mb-4" data-lang="ins-list-title">سجل بوليصات التأمين الطبي النشطة</h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-start rtl:text-right border-collapse">
+                                <thead>
+                                    <tr class="bg-slate-100 text-slate-600 text-xs font-black uppercase border-b border-slate-200">
+                                        <th class="p-4" data-lang="th-patient">اسم المريض</th>
+                                        <th class="p-4" data-lang="th-ins-comp">شركة التأمين</th>
+                                        <th class="p-4" data-lang="th-ins-pol">رقم البوليصة</th>
+                                        <th class="p-4" data-lang="th-action">الإجراء</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="insurance-table-body" class="text-sm divide-y divide-slate-100"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. مناوبات الأطباء -->
+                <div id="tab-shifts" class="hidden space-y-6">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                        <h3 class="text-lg font-black text-slate-900 mb-4 flex items-center gap-2"><i class="fa-solid fa-clock text-blue-600"></i> <span data-lang="shift-add-title">تحديد مناوبات وجدول أوقات الأطباء</span></h3>
+                        <form onsubmit="handleAddShift(event)" class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                            <input type="text" id="shift-doctor" placeholder="اسم الطبيب" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required>
+                            <input type="text" id="shift-days" placeholder="أيام العمل (مثلاً: الأحد - الخميس)" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required>
+                            <input type="text" id="shift-time" placeholder="الفترة الزمنية (مثلاً: 9 صباحاً - 5 مساءً)" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required>
+                            <button type="submit" class="bg-blue-800 hover:bg-blue-900 text-white font-bold py-3.5 rounded-xl text-sm transition shadow" data-lang="btn-save-shift">حفظ المناوبة</button>
+                        </form>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                        <h3 class="text-lg font-black text-slate-900 mb-4" data-lang="shift-list-title">جدول ومناوبات الأطباء الحالية</h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-start rtl:text-right border-collapse">
+                                <thead>
+                                    <tr class="bg-slate-100 text-slate-600 text-xs font-black uppercase border-b border-slate-200">
+                                        <th class="p-4" data-lang="th-doc-name">اسم الطبيب</th>
+                                        <th class="p-4" data-lang="th-work-days">أيام العمل</th>
+                                        <th class="p-4" data-lang="th-time-period">الفترة الزمنية</th>
+                                        <th class="p-4" data-lang="th-action">الإجراء</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="shifts-table-body" class="text-sm divide-y divide-slate-100"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. إدارة الخدمات -->
+                <div id="tab-services-mgmt" class="hidden space-y-6">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                        <h3 class="text-lg font-black text-slate-900 mb-4 flex items-center gap-2"><i class="fa-solid fa-stethoscope text-blue-600"></i> <span>إضافة خدمة علاجية جديدة</span></h3>
+                        <form onsubmit="handleAddService(event)" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <input type="text" id="srv-name" placeholder="اسم الخدمة" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required>
+                            <input type="text" id="srv-desc" placeholder="وصف موجز للخدمة" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required>
+                            <button type="submit" class="bg-blue-800 hover:bg-blue-900 text-white font-bold py-3.5 rounded-xl text-sm transition shadow">إضافة الخدمة</button>
+                        </form>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                        <h3 class="text-lg font-black text-slate-900 mb-4">الخدمات العلاجية النشطة</h3>
+                        <div id="services-mgmt-list" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+                    </div>
+                </div>
+
+                <!-- 9. إدارة الأطباء -->
+                <div id="tab-doctors-mgmt" class="hidden space-y-6">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                        <h3 class="text-lg font-black text-slate-900 mb-4 flex items-center gap-2"><i class="fa-solid fa-user-doctor text-blue-600"></i> <span>تسجيل طبيب استشاري جديد</span></h3>
+                        <form onsubmit="handleAddDoctor(event)" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <input type="text" id="doc-name" placeholder="اسم الطبيب والتخصص" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required>
+                            <input type="text" id="doc-exp" placeholder="الشهادات والخبرات" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required>
+                            <button type="submit" class="bg-blue-800 hover:bg-blue-900 text-white font-bold py-3.5 rounded-xl text-sm transition shadow">إضافة الطبيب</button>
+                        </form>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                        <h3 class="text-lg font-black text-slate-900 mb-4">قائمة الكادر الطبي</h3>
+                        <div id="doctors-mgmt-list" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+                    </div>
+                </div>
+
+                <!-- 10. إدارة الصلاحيات والمستخدمين -->
+                <div id="tab-users" class="hidden space-y-6">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                        <h3 class="text-lg font-black text-slate-900 mb-4 flex items-center gap-2"><i class="fa-solid fa-user-gear text-blue-600"></i> <span>إضافة مستخدم جديد للنظام وصلاحياته</span></h3>
+                        <form onsubmit="handleAddUser(event)" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <input type="text" id="new-user" placeholder="اسم المستخدم (Username)" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required>
+                            <input type="password" id="new-pass" placeholder="كلمة المرور" class="border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required>
+                            <button type="submit" class="bg-blue-800 hover:bg-blue-900 text-white font-bold py-3.5 rounded-xl text-sm transition shadow">حفظ المستخدم الصلاحية</button>
+                        </form>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                        <h3 class="text-lg font-black text-slate-900 mb-4">المستخدمون المصرح لهم بالدخول</h3>
+                        <div id="users-mgmt-list" class="space-y-3"></div>
+                    </div>
+                </div>
+
+                <!-- 11. تغيير كلمة المرور -->
+                <div id="tab-settings" class="hidden space-y-6">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 max-w-xl">
+                        <h3 class="text-lg font-black text-slate-900 mb-4 flex items-center gap-2"><i class="fa-solid fa-key text-blue-600"></i> <span>تغيير كلمة المرور للحساب الحالي</span></h3>
+                        <form onsubmit="handlePasswordChange(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-600 mb-1">كلمة المرور الجديدة</label>
+                                <input type="password" id="current-user-new-pass" class="w-full border border-slate-300 p-3.5 rounded-xl text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none" required>
+                            </div>
+                            <button type="submit" class="bg-blue-800 hover:bg-blue-900 text-white font-bold py-3.5 px-6 rounded-xl text-sm transition shadow">تحديث كلمة المرور</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript System Engine -->
+    <script>
+        let currentLang = 'ar';
+        let currentUser = null;
+
+        let services = JSON.parse(localStorage.getItem('pearl_services')) || [
+            { id: 1, name: 'تبييض الأسنان بالليزر', desc: 'أحدث تقنيات الليزر لتبييض الأسنان واستعادة بريقها.' },
+            { id: 2, name: 'علاج جذور الأسنان', desc: 'علاج متطور لقنوات الجذور بدون ألم باستخدام الأجهزة الحديثة.' },
+            { id: 3, name: 'زراعة الأسنان الدولية', desc: 'تعويض الأسنان المفقودة بغرسات سويسرية وألمانية مضمونة مدى الحياة.' }
+        ];
+
+        let doctors = JSON.parse(localStorage.getItem('pearl_doctors')) || [
+            { id: 1, name: 'د. حنين (استشاري جراحة الفم)', exp: 'خريجة الجامعات العالمية بخبرة تفوق 12 عاماً.' },
+            { id: 2, name: 'د. محمد الأيوبي (أخصائي التجميل)', exp: 'حاصل على البورد الدولي في تجميل الأسنان والابتسامة الرقمية.' }
+        ];
+
+        let bookings = JSON.parse(localStorage.getItem('pearl_bookings')) || [];
+        let records = JSON.parse(localStorage.getItem('pearl_records')) || [];
+        let inventory = JSON.parse(localStorage.getItem('pearl_inventory')) || [];
+        let transactions = JSON.parse(localStorage.getItem('pearl_transactions')) || [];
+        let employees = JSON.parse(localStorage.getItem('pearl_employees')) || [];
+        let insurance = JSON.parse(localStorage.getItem('pearl_insurance')) || [];
+        let shifts = JSON.parse(localStorage.getItem('pearl_shifts')) || [];
+        
+        let systemUsers = JSON.parse(localStorage.getItem('pearl_users')) || {
+            'it': 'it123',
+            'haneen': 'haneen123'
+        };
+
+        const translations = {
+            ar: {
+                'clinic-subtitle': 'Ultimate Global ERP',
+                'nav-home': 'الرئيسية',
+                'nav-services': 'الخدمات العلاجية',
+                'nav-doctors': 'الكادر الطبي',
+                'nav-booking': 'حجز المواعيد',
+                'nav-admin': 'بوابة الإدارة الشاملة',
+                'hero-tag': 'نظام الإدارة الصحية العالمي المتكامل',
+                'hero-title': 'التميز في رعاية الأسنان بأحدث التقنيات الدولية',
+                'hero-desc': 'منظومة رقمية شاملة لإدارة العيادات، الملفات الطبية، التأمين الطبي، الحسابات، وشؤون الموظفين بدقة متناهية.',
+                'hero-btn1': 'احجز موعدك الآن',
+                'hero-btn2': 'استكشف خدماتنا',
+                'services-section-title': 'خدماتنا الطبية المتميزة',
+                'services-section-subtitle': 'نقدم أحدث حلول طب وتجميل الأسنان بأعلى معايير الأمان والتعقيم العالمي',
+                'doctors-section-title': 'نخبة الأطباء والاستشاريين',
+                'doctors-section-subtitle': 'فريق طبي محترف ذو اعتمادات دولية لضمان أعلى نسب النجاح والرعاية',
+                'booking-title': 'حجز موعد جديد',
+                'booking-subtitle': 'قم بتعبئة بياناتك وسنقوم بالتنسيق والتأكيد الفوري لموعدك',
+                'form-name': 'اسم المريض الكامل',
+                'form-phone': 'رقم الهاتف المحمول',
+                'form-service': 'الخدمة العلاجية المطلوبة',
+                'form-date': 'تاريخ الموعد المفضل',
+                'form-submit': 'تأكيد حجز الموعد',
+                'login-title': 'تسجيل دخول نظام الإدارة',
+                'login-subtitle': 'أدخل بيانات الاعتماد (مثال: it أو haneen)',
+                'login-user-lbl': 'اسم المستخدم',
+                'login-pass-lbl': 'كلمة المرور',
+                'login-btn': 'دخول آمن للنظام',
+                'dash-main-title': 'النظام العالمي الشامل للعيادات (Ultimate ERP)',
+                'dash-exit': 'خروج من النظام'
+            },
+            en: {
+                'clinic-subtitle': 'Ultimate Global ERP',
+                'nav-home': 'Home',
+                'nav-services': 'Services',
+                'nav-doctors': 'Doctors',
+                'nav-booking': 'Book Appointment',
+                'nav-admin': 'Admin Portal',
+                'hero-tag': 'Global Integrated Health Management System',
+                'hero-title': 'Excellence in Dental Care with International Technologies',
+                'hero-desc': 'Comprehensive digital system for clinic management, medical records, medical insurance, accounts, and HR.',
+                'hero-btn1': 'Book Appointment Now',
+                'hero-btn2': 'Explore Services',
+                'services-section-title': 'Our Premium Medical Services',
+                'services-section-subtitle': 'We offer the latest dental and cosmetic solutions with highest global standards.',
+                'doctors-section-title': 'Elite Doctors & Consultants',
+                'doctors-section-subtitle': 'Professional medical team with international credentials.',
+                'booking-title': 'Book New Appointment',
+                'booking-subtitle': 'Fill in your details and we will confirm your appointment immediately.',
+                'form-name': 'Full Patient Name',
+                'form-phone': 'Mobile Phone Number',
+                'form-service': 'Required Service',
+                'form-date': 'Preferred Date',
+                'form-submit': 'Confirm Appointment',
+                'login-title': 'Admin Login',
+                'login-subtitle': 'Enter credentials (e.g. it or haneen)',
+                'login-user-lbl': 'Username',
+                'login-pass-lbl': 'Password',
+                'login-btn': 'Secure Login',
+                'dash-main-title': 'Ultimate Clinic Global ERP System',
+                'dash-exit': 'Exit System'
+            }
+        };
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            document.getElementById('html-root').setAttribute('lang', currentLang);
+            document.getElementById('html-root').setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+            document.getElementById('lang-btn-text').innerText = currentLang === 'ar' ? 'English' : 'العربية';
+            
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                const key = el.getAttribute('data-lang');
+                if (translations[currentLang][key]) {
+                    el.innerText = translations[currentLang][key];
+                }
+            });
+            renderFrontend();
+        }
+
+        function renderFrontend() {
+            const sGrid = document.getElementById('services-grid');
+            sGrid.innerHTML = services.map(s => `
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-14 h-14 bg-blue-100 text-blue-700 rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-inner"><i class="fa-solid fa-tooth"></i></div>
+                    <h3 class="text-xl font-black mb-3 text-slate-900">${s.name}</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">${s.desc}</p>
+                </div>
+            `).join('');
+
+            const sSelect = document.getElementById('service-type');
+            sSelect.innerHTML = services.map(s => `<option value="${s.name}">${s.name}</option>`).join('');
+
+            const dGrid = document.getElementById('doctors-grid');
+            dGrid.innerHTML = doctors.map(d => `
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm text-center">
+                    <div class="w-24 h-24 bg-blue-50 text-blue-700 rounded-full flex items-center justify-center text-4xl mx-auto mb-4 shadow-inner border border-blue-100"><i class="fa-solid fa-user-doctor"></i></div>
+                    <h3 class="text-xl font-black text-slate-900 mb-1">${d.name}</h3>
+                    <p class="text-slate-500 text-sm">${d.exp}</p>
+                </div>
+            `).join('');
+        }
+
+        function handleBookingSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('patient-name').value;
+            const phone = document.getElementById('patient-phone').value;
+            const service = document.getElementById('service-type').value;
+            const date = document.getElementById('booking-date').value;
+
+            bookings.push({ id: Date.now(), name, phone, service, date });
+            localStorage.setItem('pearl_bookings', JSON.stringify(bookings));
+            alert('تم حجز موعدك بنجاح وسنتواصل معك قريباً للتأكيد!');
+            document.getElementById('booking-form').reset();
+        }
+
+        function openAdminModal() { document.getElementById('admin-modal').classList.remove('hidden'); document.getElementById('admin-modal').classList.add('flex'); }
+        function closeAdminModal() { document.getElementById('admin-modal').classList.remove('flex'); document.getElementById('admin-modal').classList.add('hidden'); }
+
+        function handleAdminLogin(e) {
+            e.preventDefault();
+            const u = document.getElementById('login-username').value.trim().toLowerCase();
+            const p = document.getElementById('admin-password').value.trim();
+
+            if (systemUsers[u] && systemUsers[u] === p) {
+                currentUser = u;
+                closeAdminModal();
+                document.getElementById('dashboard-modal').classList.remove('hidden');
+                document.getElementById('current-user-avatar').innerText = u.toUpperCase();
+                document.getElementById('user-role-badge').innerText = u === 'it' ? 'صلاحيات كاملة مطلقة (IT Master)' : 'صلاحيات إدارية وعيادية (Dr. Haneen)';
+                setupDashboardTabs();
+                renderDashboardData();
+            } else {
+                alert('خطأ في اسم المستخدم أو كلمة المرور!');
+            }
+        }
+
+        function closeDashboard() {
+            document.getElementById('dashboard-modal').classList.add('hidden');
+            currentUser = null;
+        }
+
+        const tabsConfig = [
+            { id: 'appointments', name: '📅 المواعيد والحجوزات', icon: 'fa-calendar-check' },
+            { id: 'medical', name: '📋 الملفات الطبية (EHR)', icon: 'fa-notes-medical' },
+            { id: 'pharmacy', name: '💊 المخزون والأدوية', icon: 'fa-pills' },
+            { id: 'finance', name: '💰 الحسابات والأرباح', icon: 'fa-file-invoice-dollar' },
+            { id: 'hr', name: '👥 الرواتب والمستحقات', icon: 'fa-hand-holding-dollar' },
+            { id: 'insurance', name: '🛡️ التأمين الطبي', icon: 'fa-shield-heart' },
+            { id: 'shifts', name: '⏰ مناوبات الأطباء', icon: 'fa-clock' },
+            { id: 'services-mgmt', name: '⚙️ إدارة الخدمات', icon: 'fa-stethoscope' },
+            { id: 'doctors-mgmt', name: '👨‍⚕️ إدارة الأطباء', icon: 'fa-user-doctor' },
+            { id: 'users', name: '🔐 المستخدمين والصلاحيات', icon: 'fa-user-gear' },
+            { id: 'settings', name: '🔑 تغيير كلمة المرور', icon: 'fa-key' }
+        ];
+
+        function setupDashboardTabs() {
+            const container = document.getElementById('tab-buttons-container');
+            container.innerHTML = tabsConfig.map((t, idx) => `
+                <button onclick="switchTab('${t.id}')" id="tab-btn-${t.id}" class="px-4 py-2.5 rounded-xl font-bold text-sm transition flex items-center gap-2 ${idx === 0 ? 'bg-blue-600 text-white shadow' : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'}">
+                    <i class="fa-solid ${t.icon}"></i> ${t.name}
+                </button>
+            `).join('');
+        }
+
+        function switchTab(tabId) {
+            tabsConfig.forEach(t => {
+                document.getElementById(`tab-${t.id}`).classList.add('hidden');
+                const btn = document.getElementById(`tab-btn-${t.id}`);
+                btn.className = "px-4 py-2.5 rounded-xl font-bold text-sm transition flex items-center gap-2 bg-white text-slate-700 hover:bg-slate-100 border border-slate-200";
+            });
+            document.getElementById(`tab-${tabId}`).classList.remove('hidden');
+            const activeBtn = document.getElementById(`tab-btn-${tabId}`);
+            activeBtn.className = "px-4 py-2.5 rounded-xl font-bold text-sm transition flex items-center gap-2 bg-blue-600 text-white shadow";
+            renderDashboardData();
+        }
+
+        function renderDashboardData() {
+            document.getElementById('dash-total').innerText = bookings.length;
+            document.getElementById('bookings-table-body').innerHTML = bookings.map(b => `
+                <tr class="hover:bg-slate-50/80">
+                    <td class="p-4 font-bold text-slate-900">${b.name}</td>
+                    <td class="p-4 text-slate-600">${b.phone}</td>
+                    <td class="p-4"><span class="bg-blue-50 text-blue-800 px-3 py-1 rounded-full text-xs font-bold">${b.service}</span></td>
+                    <td class="p-4 text-slate-600">${b.date}</td>
+                    <td class="p-4"><button onclick="deleteBooking(${b.id})" class="text-red-600 hover:bg-red-50 p-2 rounded-lg transition"><i class="fa-solid fa-trash"></i></button></td>
+                </tr>
+            `).join('');
+
+            document.getElementById('records-table-body').innerHTML = records.map(r => `
+                <tr class="hover:bg-slate-50/80">
+                    <td class="p-4 font-bold text-slate-900">${r.patient}</td>
+                    <td class="p-4 text-slate-700">${r.diagnosis}</td>
+                    <td class="p-4 text-slate-600">${r.prescription}</td>
+                    <td class="p-4"><button onclick="deleteRecord(${r.id})" class="text-red-600 hover:bg-red-50 p-2 rounded-lg transition"><i class="fa-solid fa-trash"></i></button></td>
+                </tr>
+            `).join('');
+
+            document.getElementById('inventory-table-body').innerHTML = inventory.map(i => `
+                <tr class="hover:bg-slate-50/80">
+                    <td class="p-4 font-bold text-slate-900">${i.item}</td>
+                    <td class="p-4"><span class="bg-slate-100 px-3 py-1 rounded-full text-xs font-bold">${i.qty}</span></td>
+                    <td class="p-4 text-slate-600">${i.exp}</td>
+                    <td class="p-4"><button onclick="deleteInventory(${i.id})" class="text-red-600 hover:bg-red-50 p-2 rounded-lg transition"><i class="fa-solid fa-trash"></i></button></td>
+                </tr>
+            `).join('');
+
+            let totalInc = transactions.filter(t => t.type === 'income').reduce((sum, t) => sum + Number(t.amount), 0);
+            let totalExp = transactions.filter(t => t.type === 'expense').reduce((sum, t) => sum + Number(t.amount), 0);
+            document.getElementById('fin-income').innerText = totalInc + ' د.إ';
+            document.getElementById('fin-expenses').innerText = totalExp + ' د.إ';
+            document.getElementById('fin-net').innerText = (totalInc - totalExp) + ' د.إ';
+
+            let totalPayroll = employees.reduce((sum, emp) => sum + (Number(emp.salary) + Number(emp.bonus) - Number(emp.deduct)), 0);
+            document.getElementById('total-payroll-box').innerText = 'إجمالي الصرف: ' + totalPayroll + ' د.إ';
+            document.getElementById('payroll-table-body').innerHTML = employees.map(emp => {
+                let net = Number(emp.salary) + Number(emp.bonus) - Number(emp.deduct);
+                return `
+                    <tr class="hover:bg-slate-50/80">
+                        <td class="p-4 font-bold text-slate-900">${emp.name}</td>
+                        <td class="p-4 text-slate-600">${emp.role}</td>
+                        <td class="p-4">${emp.salary}</td>
+                        <td class="p-4 text-emerald-600">+${emp.bonus}</td>
+                        <td class="p-4 text-red-600">-${emp.deduct}</td>
+                        <td class="p-4 font-black text-blue-950">${net} د.إ</td>
+                        <td class="p-4"><button onclick="deleteEmployee(${emp.id})" class="text-red-600 hover:bg-red-50 p-2 rounded-lg transition"><i class="fa-solid fa-trash"></i></button></td>
+                    </tr>
+                `;
+            }).join('');
+
+            document.getElementById('insurance-table-body').innerHTML = insurance.map(ins => `
+                <tr class="hover:bg-slate-50/80">
+                    <td class="p-4 font-bold text-slate-900">${ins.patient}</td>
+                    <td class="p-4 text-blue-700 font-semibold">${ins.company}</td>
+                    <td class="p-4 text-slate-600">${ins.policy}</td>
+                    <td class="p-4"><button onclick="deleteInsurance(${ins.id})" class="text-red-600 hover:bg-red-50 p-2 rounded-lg transition"><i class="fa-solid fa-trash"></i></button></td>
+                </tr>
+            `).join('');
+
+            document.getElementById('shifts-table-body').innerHTML = shifts.map(sh => `
+                <tr class="hover:bg-slate-50/80">
+                    <td class="p-4 font-bold text-slate-900">${sh.doctor}</td>
+                    <td class="p-4 text-slate-600">${sh.days}</td>
+                    <td class="p-4 text-slate-600">${sh.time}</td>
+                    <td class="p-4"><button onclick="deleteShift(${sh.id})" class="text-red-600 hover:bg-red-50 p-2 rounded-lg transition"><i class="fa-solid fa-trash"></i></button></td>
+                </tr>
+            `).join('');
+
+            document.getElementById('services-mgmt-list').innerHTML = services.map(s => `
+                <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 flex justify-between items-center">
+                    <div><h4 class="font-bold text-slate-900">${s.name}</h4><p class="text-xs text-slate-500">${s.desc}</p></div>
+                    <button onclick="deleteService(${s.id})" class="text-red-600 p-2"><i class="fa-solid fa-trash"></i></button>
+                </div>
+            `).join('');
+
+            document.getElementById('doctors-mgmt-list').innerHTML = doctors.map(d => `
+                <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 flex justify-between items-center">
+                    <div><h4 class="font-bold text-slate-900">${d.name}</h4><p class="text-xs text-slate-500">${d.exp}</p></div>
+                    <button onclick="deleteDoctor(${d.id})" class="text-red-600 p-2"><i class="fa-solid fa-trash"></i></button>
+                </div>
+            `).join('');
+
+            document.getElementById('users-mgmt-list').innerHTML = Object.keys(systemUsers).map(username => `
+                <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 flex justify-between items-center">
+                    <div><span class="font-bold text-slate-900">اسم المستخدم: ${username}</span></div>
+                    ${username !== 'it' ? `<button onclick="deleteUser('${username}')" class="text-red-600 p-2"><i class="fa-solid fa-trash"></i></button>` : '<span class="text-xs font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">حساب رئيسي</span>'}
+                </div>
+            `).join('');
+        }
+
+        function clearBookings() { bookings = []; localStorage.setItem('pearl_bookings', JSON.stringify(bookings)); renderDashboardData(); }
+        function deleteBooking(id) { bookings = bookings.filter(b => b.id !== id); localStorage.setItem('pearl_bookings', JSON.stringify(bookings)); renderDashboardData(); }
+
+        function handleAddRecord(e) {
+            e.preventDefault();
+            records.push({ id: Date.now(), patient: document.getElementById('rec-patient').value, diagnosis: document.getElementById('rec-diagnosis').value, prescription: document.getElementById('rec-prescription').value });
+            localStorage.setItem('pearl_records', JSON.stringify(records));
+            e.target.reset(); renderDashboardData();
+        }
+        function deleteRecord(id) { records = records.filter(r => r.id !== id); localStorage.setItem('pearl_records', JSON.stringify(records)); renderDashboardData(); }
+
+        function handleAddInventory(e) {
+            e.preventDefault();
+            inventory.push({ id: Date.now(), item: document.getElementById('inv-item').value, qty: document.getElementById('inv-qty').value, exp: document.getElementById('inv-exp').value });
+            localStorage.setItem('pearl_inventory', JSON.stringify(inventory));
+            e.target.reset(); renderDashboardData();
+        }
+        function deleteInventory(id) { inventory = inventory.filter(i => i.id !== id); localStorage.setItem('pearl_inventory', JSON.stringify(inventory)); renderDashboardData(); }
+
+        function handleAddTransaction(e) {
+            e.preventDefault();
+            transactions.push({ id: Date.now(), desc: document.getElementById('tr-desc').value, amount: document.getElementById('tr-amount').value, type: document.getElementById('tr-type').value });
+            localStorage.setItem('pearl_transactions', JSON.stringify(transactions));
+            e.target.reset(); renderDashboardData();
+        }
+
+        function handleAddEmployee(e) {
+            e.preventDefault();
+            employees.push({ id: Date.now(), name: document.getElementById('emp-name').value, role: document.getElementById('emp-role').value, salary: document.getElementById('emp-salary').value, bonus: document.getElementById('emp-bonus').value, deduct: document.getElementById('emp-deduct').value });
+            localStorage.setItem('pearl_employees', JSON.stringify(employees));
+            e.target.reset(); renderDashboardData();
+        }
+        function deleteEmployee(id) { employees = employees.filter(emp => emp.id !== id); localStorage.setItem('pearl_employees', JSON.stringify(employees)); renderDashboardData(); }
+
+        function handleAddInsurance(e) {
+            e.preventDefault();
+            insurance.push({ id: Date.now(), patient: document.getElementById('ins-patient').value, company: document.getElementById('ins-company').value, policy: document.getElementById('ins-policy').value });
+            localStorage.setItem('pearl_insurance', JSON.stringify(insurance));
+            e.target.reset(); renderDashboardData();
+        }
+        function deleteInsurance(id) { insurance = insurance.filter(ins => ins.id !== id); localStorage.setItem('pearl_insurance', JSON.stringify(insurance)); renderDashboardData(); }
+
+        function handleAddShift(e) {
+            e.preventDefault();
+            shifts.push({ id: Date.now(), doctor: document.getElementById('shift-doctor').value, days: document.getElementById('shift-days').value, time: document.getElementById('shift-time').value });
+            localStorage.setItem('pearl_shifts', JSON.stringify(shifts));
+            e.target.reset(); renderDashboardData();
+        }
+        function deleteShift(id) { shifts = shifts.filter(sh => sh.id !== id); localStorage.setItem('pearl_shifts', JSON.stringify(shifts)); renderDashboardData(); }
+
+        function handleAddService(e) {
+            e.preventDefault();
+            services.push({ id: Date.now(), name: document.getElementById('srv-name').value, desc: document.getElementById('srv-desc').value });
+            localStorage.setItem('pearl_services', JSON.stringify(services));
+            e.target.reset(); renderDashboardData(); renderFrontend();
+        }
+        function deleteService(id) { services = services.filter(s => s.id !== id); localStorage.setItem('pearl_services', JSON.stringify(services)); renderDashboardData(); renderFrontend(); }
+
+        function handleAddDoctor(e) {
+            e.preventDefault();
+            doctors.push({ id: Date.now(), name: document.getElementById('doc-name').value, exp: document.getElementById('doc-exp').value });
+            localStorage.setItem('pearl_doctors', JSON.stringify(doctors));
+            e.target.reset(); renderDashboardData(); renderFrontend();
+        }
+        function deleteDoctor(id) { doctors = doctors.filter(d => d.id !== id); localStorage.setItem('pearl_doctors', JSON.stringify(doctors)); renderDashboardData(); renderFrontend(); }
+
+        function handleAddUser(e) {
+            e.preventDefault();
+            const u = document.getElementById('new-user').value.trim().toLowerCase();
+            const p = document.getElementById('new-pass').value.trim();
+            systemUsers[u] = p;
+            localStorage.setItem('pearl_users', JSON.stringify(systemUsers));
+            e.target.reset(); renderDashboardData(); alert('تم إضافة المستخدم بنجاح!');
+        }
+        function deleteUser(u) {
+            delete systemUsers[u];
+            localStorage.setItem('pearl_users', JSON.stringify(systemUsers));
+            renderDashboardData();
+        }
+
+        function handlePasswordChange(e) {
+            e.preventDefault();
+            const newP = document.getElementById('current-user-new-pass').value.trim();
+            systemUsers[currentUser] = newP;
+            localStorage.setItem('pearl_users', JSON.stringify(systemUsers));
+            alert('تم تغيير كلمة المرور بنجاح!');
+            e.target.reset();
+        }
+
+        window.onload = function() {
+            renderFrontend();
+        };
+    </script>
+</body>
+</html>
